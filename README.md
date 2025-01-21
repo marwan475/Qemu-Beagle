@@ -54,7 +54,10 @@ cd build
 make -j$(nproc)
 make install -j$(nproc)
 ```
+run install if you want this qemu version in your bin, if you already have qemu installed 
 
-the executable we need can be found in qemu-linaro/build/arm-softmmu/qemu-system-arm
+then the executable we need can be found in qemu-linaro/build/arm-softmmu/qemu-system-arm
 
 copy that executable into your working directory
+
+
