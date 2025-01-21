@@ -1,6 +1,7 @@
 # Qemu-Beagle
 Qemu setup for Embedded linux development on Beagle Bone Black 
 
+
 ## Goal
 - setup qemu to emulate the beagle bone black for embedded linux as close as possible
 
