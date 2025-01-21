@@ -258,9 +258,9 @@ from here we will continue and mount the root file system manually
 
 we are now in a root shell on an emulated beagle 
 
-we can now develop for embedded linux using qemu sicne we compiled our own kernel
+we can now develop for embedded linux using qemu since we compiled our own kernel
 
-to get your kernel changes to work on the actual beagle bone black you will have to use diffrent preset config and .dtb, likely diffrent versions of MLO and u-boot
+to get your kernel changes to work on the actual beagle bone black you will have to use different preset config and .dtb, likely diffrent versions of MLO and u-boot
 
 i will update this once i get to working with the actual board
 
