@@ -18,4 +18,41 @@ the closest we can get is using a fork of qemu by linaro that has support for th
   - beagle board uses omap3
   - we will have to change the config slightly when compiling the linux kernel for qemu vs actual board
  
-whit this knowledge we know we wont be able to emulate the BBB perfectly but we can get close, as qemu is a great tool for development
+with this knowledge we know we wont be able to emulate the BBB perfectly but we can get close, as qemu is a great tool for development
+
+## Setting up qemu-linaro
+
+the linaro qemu for is located at https://git.linaro.org/qemu/qemu-linaro.git
+
+*note this is an old repo meaning python 2 is required to be able to build it, you may have to build python2 yourself or give
+
+```sh
+wget https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz
+tar -xzf Python-2.7.18.tgz
+cd Python-2.7.18
+./configure
+make -j$(nproc)
+sudo make install -j$(nproc)
+```
+
+```sh
+
+#install dependencies
+sudo apt-get install libpixman-1-dev
+sudo apt-get install libfdt-dev
+sudo apt-get install zlib1g-dev
+sudo apt install libglib2.0-dev
+
+# clone into the repo
+git clone https://git.linaro.org/qemu/qemu-linaro.git
+cd qemu-linaro
+mkdir build
+cd build
+../configure --disable-werror
+make -j$(nproc)
+make install -j$(nproc)
+```
+
+the executable we need can be found in qemu-linaro/build/arm-softmmu/qemu-system-arm
+
+copy that executable into your working directory
