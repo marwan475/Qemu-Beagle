@@ -140,7 +140,7 @@ losetup -d /dev/loop0
 
 ## Adding files to sd img
 
-we need to add MLO, u-boot.img, uIntrd, uEnv.txt into the first partition
+we need to add MLO, u-boot.bin, uIntrd, uEnv.txt into the first partition
 
 i have included files for the boot partition in the repo that work with this config, building these files can be tedious so i added them to save time
 
