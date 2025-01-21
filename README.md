@@ -170,6 +170,98 @@ losetup -d /dev/loop0
 
 ```
 
+the last step is to build the linux kernel
 
+## Building the linux kernel
+
+you can clone from the offical linux repo or from https://github.com/beagleboard/linux
+
+make sure you have arm cross compilers installed
+
+clone into linux and enter the repo
+
+```sh
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- distclean
+
+# compile for beagle board, required to work on qemu
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- omap2plus_defconfig -j$(nproc)
+
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- uImage dtbs LOADADDR=0x80008000 -j$(nproc)
+
+```
+after compiling make sure to remove thermal driver support, as they cause the kernel to error in qemu
+
+```sh
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig
+```
+Device Drivers > Thermal drivers > Texas Instruments thermal drivers
+
+disable Texas Instruments SoCs temperature sensor driver  
+
+recompile
+```sh
+make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- uImage dtbs LOADADDR=0x80008000 -j$(nproc)
+```
+
+## loading uImage onto bootpartition
+
+```sh
+mkdir /mnt/beagle
+
+sudo losetup --partscan /dev/loop0 beaglebone.img
+
+sudo mount /dev/loop0p1 /mnt/beagle
+
+sudo cp linux/arch/arm/boot/uImage /mnt/beagle
+
+# make sure toe rename omap3-beagle.dtb to board.dtb to work with uEnv.txt
+sudo cp linux/arch/arm/boot/dts/ti/omap/omap3-beagle.dtb /mnt/beagle/board.dtb
+
+umount /mnt/beagle
+
+```
+
+*make sure to unmount before launching qemu
+
+## booting up
+
+one issue we will face is the init script will fail to mount or rfs so we have to do it manually
+
+Boot up qemu
+```sh
+./qemu-system-arm -M beagle -cpu cortex-a8 -m 512M -sd ./beaglebone.img -clock unix -serial stdio -usb -device usb-kbd -k /usr/share/qemu/keymaps/en-us
+```
+
+wait for u-boot to auto boot, and dont press anything
+
+after a bit, (if it stalls after it gets to mounting on /root just wait) we will drop into an initramfs
+
+from here we will continue and mount the root file system manually
+
+```sh
+# mount file system
+(initramfs) mount -t ext4 /dev/mmcblk0p2 /root
+(initramfs) cp /bin/busybox /root/bin/
+
+# not sure if this is mandatory but the script attempts to do this
+(initramfs) mount --bind /dev /root/dev 
+(initramfs) mount -t proc proc /root/proc 
+(initramfs) mount -t sysfs sysfs /root/sys
+
+# change root file system, it will show an erorr message about tty this is normal
+(initramfs) chroot /root
+
+# start bash shell
+(initramfs) /bin/bash
+
+```
+
+we are now in a root shell on an emulated beagle 
+
+we can now develop for embedded linux using qemu sicne we compiled our own kernel
+
+to get your kernel changes to work on the actual beagle bone black you will have to use diffrent preset config and .dtb, likely diffrent versions of MLO and u-boot
+
+i will update this once i get to working with the actual board
 
 
