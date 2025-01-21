@@ -1,0 +1,11 @@
+/.
+/lib
+/lib/arm-linux-gnueabi
+/lib/arm-linux-gnueabi/libdrm_intel.so.1.0.0
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libdrm-intel1
+/usr/share/doc/libdrm-intel1/copyright
+/usr/share/doc/libdrm-intel1/changelog.Debian.gz
+/lib/arm-linux-gnueabi/libdrm_intel.so.1

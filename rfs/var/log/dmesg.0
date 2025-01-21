@@ -1,0 +1,320 @@
+[    0.000000] Linux version 3.0.0-1004-linaro-omap (buildd@araceae) (gcc version 4.5.2 (Ubuntu/Linaro 4.5.2-8ubuntu4) ) #5~ppa~natty-Ubuntu SMP PREEMPT Mon Aug 22 08:44:20 UTC 2011 (Ubuntu 3.0.0-1004.5~ppa~natty-linaro-omap 3.0.0)
+[    0.000000] CPU: ARMv7 Processor [410fc083] revision 3 (ARMv7), cr=50c5387f
+[    0.000000] CPU: VIPT nonaliasing data cache, VIPT nonaliasing instruction cache
+[    0.000000] Machine: OMAP3 Beagle Board, model: TI OMAP3 BeagleBoard
+[    0.000000] Reserving 12582912 bytes SDRAM for VRAM
+[    0.000000] Memory policy: ECC disabled, Data cache writeback
+[    0.000000] OMAP3430/3530 ES3.1 (iva sgx neon isp )
+[    0.000000] SRAM: Mapped pa 0x40200000 to va 0xfe400000 size: 0x10000
+[    0.000000] On node 0 totalpages: 62464
+[    0.000000] free_area_init_node: node 0, pgdat c0696da0, node_mem_map c0bfe000
+[    0.000000]   Normal zone: 512 pages used for memmap
+[    0.000000]   Normal zone: 0 pages reserved
+[    0.000000]   Normal zone: 61952 pages, LIFO batch:15
+[    0.000000] Clocking rate (Crystal/Core/MPU): 26.0/332/500 MHz
+[    0.000000] Reprogramming SDRC clock to 332000000 Hz
+[    0.000000] PERCPU: Embedded 7 pages/cpu @c0e04000 s7008 r8192 d13472 u32768
+[    0.000000] pcpu-alloc: s7008 r8192 d13472 u32768 alloc=8*4096
+[    0.000000] pcpu-alloc: [0] 0 
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 61952
+[    0.000000] Kernel command line: console=tty0 console=ttyO2,115200n8 root=UUID=77815a80-afb8-437c-8bc9-65f522e2457d rootwait ro earlyprintk fixrtc nocompcache vram=12M omapfb.mode=dvi:1280x720MR-16@60 mpurate=auto
+[    0.000000] PID hash table entries: 1024 (order: 0, 4096 bytes)
+[    0.000000] Dentry cache hash table entries: 32768 (order: 5, 131072 bytes)
+[    0.000000] Inode-cache hash table entries: 16384 (order: 4, 65536 bytes)
+[    0.000000] Memory: 244MB = 244MB total
+[    0.000000] Memory: 233440k/233440k available, 28704k reserved, 0K highmem
+[    0.000000] Virtual kernel memory layout:
+[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)
+[    0.000000]     fixmap  : 0xfff00000 - 0xfffe0000   ( 896 kB)
+[    0.000000]     DMA     : 0xffc00000 - 0xffe00000   (   2 MB)
+[    0.000000]     vmalloc : 0xd0800000 - 0xf8000000   ( 632 MB)
+[    0.000000]     lowmem  : 0xc0000000 - 0xd0000000   ( 256 MB)
+[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)
+[    0.000000]     modules : 0xbf800000 - 0xbfe00000   (   6 MB)
+[    0.000000]       .text : 0xc0008000 - 0xc05c3500   (5870 kB)
+[    0.000000]       .init : 0xc05c4000 - 0xc0614b60   ( 323 kB)
+[    0.000000]       .data : 0xc0616000 - 0xc0698c90   ( 524 kB)
+[    0.000000]        .bss : 0xc0698cb4 - 0xc0bfda18   (5524 kB)
+[    0.000000] Preemptible hierarchical RCU implementation.
+[    0.000000] NR_IRQS:410
+[    0.000000] IRQ: Found an INTC at 0xfa200000 (revision 4.0) with 96 interrupts
+[    0.000000] Total of 96 interrupts on 1 active controller
+[    0.000000] omap_hwmod: gpt12_fck: missing clockdomain for gpt12_fck.
+[    0.000000] OMAP clockevent source: GPTIMER12 at 32768 Hz
+[    0.000000] sched_clock: 32 bits at 32kHz, resolution 30517ns, wraps every 131071999ms
+[    0.000000] Console: colour dummy device 80x30
+[    0.000000] console [tty0] enabled
+[    0.000000] Lock dependency validator: Copyright (c) 2006 Red Hat, Inc., Ingo Molnar
+[    0.000000] ... MAX_LOCKDEP_SUBCLASSES:  8
+[    0.000000] ... MAX_LOCK_DEPTH:          48
+[    0.000000] ... MAX_LOCKDEP_KEYS:        8191
+[    0.000000] ... CLASSHASH_SIZE:          4096
+[    0.000000] ... MAX_LOCKDEP_ENTRIES:     16384
+[    0.000000] ... MAX_LOCKDEP_CHAINS:      32768
+[    0.000000] ... CHAINHASH_SIZE:          16384
+[    0.000000]  memory used by lock dependency info: 3695 kB
+[    0.000000]  per task-struct memory footprint: 1152 bytes
+[    0.012878] Calibrating delay loop... 742.10 BogoMIPS (lpj=2902016)
+[    0.054473] pid_max: default: 32768 minimum: 301
+[    0.056121] Security Framework initialized
+[    0.057220] AppArmor: AppArmor initialized
+[    0.057312] Yama: becoming mindful.
+[    0.058410] Mount-cache hash table entries: 512
+[    0.069549] CPU: Testing write buffer coherency: ok
+[    0.070953] ftrace: allocating 23478 entries in 46 pages
+[    0.108184] CPU0: thread -1, cpu 0, socket -1, mpidr 0
+[    0.108459] hw perfevents: enabled with ARMv7 Cortex-A8 PMU driver, 1 counters available
+[    0.159454] Brought up 1 CPUs
+[    0.159698] SMP: Total of 1 processors activated (742.10 BogoMIPS).
+[    0.175537] devtmpfs: initialized
+[    0.204559] omap_hwmod: _populate_mpu_rt_base found no _mpu_rt_va for l4_core
+[    0.204650] omap_hwmod: _populate_mpu_rt_base found no _mpu_rt_va for l4_per
+[    0.204711] omap_hwmod: _populate_mpu_rt_base found no _mpu_rt_va for l4_wkup
+[    0.219268] omap_hwmod: i2c1: softreset failed (waited 10000 usec)
+[    0.231018] omap_hwmod: i2c2: softreset failed (waited 10000 usec)
+[    0.242401] omap_hwmod: i2c3: softreset failed (waited 10000 usec)
+[    0.243194] omap_hwmod: am35x_otg_hs: cannot be enabled (3)
+[    0.252838] print_constraints: dummy: 
+[    0.255187] NET: Registered protocol family 16
+[    0.257965] GPMC revision 5.0
+[    0.272613] omap_device: omap_gpio.0: new worst case activate latency 0: 213623
+[    0.277038] OMAP GPIO hardware version 2.5
+[    0.279449] OMAP GPIO hardware version 2.5
+[    0.281585] OMAP GPIO hardware version 2.5
+[    0.284179] OMAP GPIO hardware version 2.5
+[    0.286468] OMAP GPIO hardware version 2.5
+[    0.288635] OMAP GPIO hardware version 2.5
+[    0.302856] omap_mux_init: Add partition: #1: core, flags: 0
+[    0.308197] OMAP3 Beagle Rev: C4
+[    0.321044] omap_device: omap_uart.0: new worst case activate latency 0: 61035
+[    0.321807] omap_device: omap_uart.0: new worst case deactivate latency 0: 30517
+[    0.330505] Found NAND on CS0
+[    0.330566] Registering NAND on CS0
+[    0.332702] gpio_request: gpio--22 (DVI reset) status -22
+[    0.332733] Unable to get DVI reset GPIO
+[    0.346984] No ATAGs?
+[    0.347167] hw-breakpoint: debug architecture 0x0 unsupported.
+[    0.382568] OMAP DMA hardware revision 4.0
+[    0.385406] Serial: AMBA PL011 UART driver
+[    0.522735] bio: create slab <bio-0> at 0
+[    0.537292] SCSI subsystem initialized
+[    0.538421] omap_device: omap2_mcspi.1: new worst case activate latency 0: 30517
+[    0.540740] omap_device: omap2_mcspi.1: new worst case deactivate latency 0: 30517
+[    0.552429] usbcore: registered new interface driver usbfs
+[    0.554168] usbcore: registered new interface driver hub
+[    0.555541] usbcore: registered new device driver usb
+[    0.562072] omap_device: omap_i2c.1: new worst case activate latency 0: 30517
+[    0.562683] omap_i2c omap_i2c.1: bus 1 rev3.12 at 2600 kHz
+[    0.577056] twl4030: PIH (irq 7) chaining IRQs 368..375
+[    0.577453] twl4030: power (irq 373) chaining IRQs 376..383
+[    0.580322] twl4030: gpio (irq 368) chaining IRQs 384..401
+[    0.591827] print_constraints: VUSB1V5: 1500 mV normal standby
+[    0.595611] print_constraints: VUSB1V8: 1800 mV normal standby
+[    0.599365] print_constraints: VUSB3V1: 3100 mV normal standby
+[    0.605407] twl4030_usb twl4030_usb: HW_CONDITIONS 0x04/4; link 2
+[    0.609466] twl4030_usb twl4030_usb: Initialized TWL4030 USB module
+[    0.618804] print_constraints: VMMC1: 1850 <--> 3150 mV at 3000 mV normal standby
+[    0.622436] print_constraints: VDAC: 1800 mV normal standby
+[    0.626037] print_constraints: VPLL2: 1800 mV normal standby
+[    0.630493] print_constraints: VSIM: 1800 <--> 3000 mV at 1800 mV normal standby
+[    0.631500] omap_device: omap_i2c.1: new worst case deactivate latency 0: 61035
+[    0.631958] omap_i2c omap_i2c.3: bus 3 rev3.12 at 100 kHz
+[    0.649841] NetLabel: Initializing
+[    0.649902] NetLabel:  domain hash size = 128
+[    0.649963] NetLabel:  protocols = UNLABELED CIPSOv4
+[    0.650878] NetLabel:  unlabeled traffic allowed by default
+[    0.651184] Switching to clocksource 32k_counter
+[    0.660614] Switched to NOHz mode on CPU #0
+[    0.780975] AppArmor: AppArmor Filesystem Enabled
+[    0.892730] NET: Registered protocol family 2
+[    0.894714] IP route cache hash table entries: 2048 (order: 1, 8192 bytes)
+[    0.898681] TCP established hash table entries: 8192 (order: 4, 65536 bytes)
+[    0.899322] TCP bind hash table entries: 8192 (order: 6, 327680 bytes)
+[    0.907165] TCP: Hash tables configured (established 8192 bind 8192)
+[    0.907379] TCP reno registered
+[    0.907501] UDP hash table entries: 128 (order: 1, 12288 bytes)
+[    0.908172] UDP-Lite hash table entries: 128 (order: 1, 12288 bytes)
+[    0.910644] NET: Registered protocol family 1
+[    0.913604] RPC: Registered named UNIX socket transport module.
+[    0.913696] RPC: Registered udp transport module.
+[    0.913787] RPC: Registered tcp transport module.
+[    0.913848] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[    0.917266] Trying to unpack rootfs image as initramfs...
+[    1.159515] Freeing initrd memory: 1812K
+[    1.166961] PMU: registered new PMU device of type 0
+[    1.174194] audit: initializing netlink socket (disabled)
+[    1.174804] type=2000 audit(1.132:1): initialized
+[    1.186218] VFS: Disk quotas dquot_6.5.2
+[    1.186798] Dquot-cache hash table entries: 1024 (order 0, 4096 bytes)
+[    1.194488] JFFS2 version 2.2. (NAND) (SUMMARY)  © 2001-2006 Red Hat, Inc.
+[    1.199676] Btrfs loaded
+[    1.199890] msgmni has been set to 459
+[    1.206420] io scheduler noop registered
+[    1.206512] io scheduler deadline registered
+[    1.207183] io scheduler cfq registered (default)
+[    1.279357] OMAP DSS rev 2.0
+[    1.313201] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[    1.383697] omap_uart.0: ttyO0 at MMIO 0x4806a000 (irq = 72) is a OMAP UART0
+[    1.403015] omap_uart.1: ttyO1 at MMIO 0x4806c000 (irq = 73) is a OMAP UART1
+[    1.418579] omap_uart.2: ttyO2 at MMIO 0x49020000 (irq = 74) is a OMAP UART2
+[    1.471893] console [ttyO2] enabled
+[    1.493255] [drm] Initialized drm 1.1.0 20060810
+[    1.560394] brd: module loaded
+[    1.588439] loop: module loaded
+[    1.589294] omap_device: omap_i2c.1: new worst case activate latency 0: 122070
+[    1.601623] mtdoops: mtd device (mtddev=name/number) must be supplied
+[    1.602600] omap2-nand driver initializing
+[    1.604003] NAND device: Manufacturer ID: 0x2c, Chip ID: 0xba (Micron NAND 256MiB 1,8V 16-bit)
+[    1.604980] Creating 5 MTD partitions on "omap2-nand.0":
+[    1.606201] 0x000000000000-0x000000080000 : "X-Loader"
+[    1.618774] 0x000000080000-0x000000260000 : "U-Boot"
+[    1.628051] 0x000000260000-0x000000280000 : "U-Boot Env"
+[    1.636108] 0x000000280000-0x000000680000 : "Kernel"
+[    1.646423] 0x000000680000-0x000010000000 : "File System"
+[    1.780975] OneNAND driver initializing
+[    1.794372] usbcore: registered new interface driver asix
+[    1.795593] usbcore: registered new interface driver cdc_ether
+[    1.796905] usbcore: registered new interface driver smsc95xx
+[    1.798156] usbcore: registered new interface driver net1080
+[    1.799468] usbcore: registered new interface driver cdc_subset
+[    1.801239] usbcore: registered new interface driver zaurus
+[    1.801696] cdc_ncm: 01-June-2011
+[    1.802825] usbcore: registered new interface driver cdc_ncm
+[    1.806152] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    1.806610] ehci_hcd: block sizes: qh 64 qtd 96 itd 160 sitd 96
+[    1.807250] ehci-omap ehci-omap.0: failed to get ehci port0 regulator
+[    1.807312] ehci-omap ehci-omap.0: failed to get ehci port1 regulator
+[    2.808349] ehci-omap ehci-omap.0: phy reset operation timed out
+[    3.816131] ehci-omap ehci-omap.0: phy reset operation timed out
+[    3.816223] ehci-omap ehci-omap.0: reset hcs_params 0x0 dbg=0 cc=0 pcc=0 ordered !ppc ports=0
+[    3.816345] ehci-omap ehci-omap.0: reset hcc_params 0000 thresh 0 uframes 1024
+[    3.816375] ehci-omap ehci-omap.0: OMAP-EHCI Host Controller
+[    3.821197] ehci-omap ehci-omap.0: new USB bus registered, assigned bus number 1
+[    3.823089] ehci-omap ehci-omap.0: irq 77, io mem 0x48064800
+[    3.823669] ehci-omap ehci-omap.0: reset command 0000002 (park)=0 ithresh=0 period=1024 Reset HALT
+[    3.823791] ehci-omap ehci-omap.0: init command 0010001 (park)=0 ithresh=1 period=1024 RUN
+[    3.840362] ehci-omap ehci-omap.0: USB 2.0 started, EHCI 0.00
+[    3.848846] usb usb1: default language 0x0409
+[    3.849578] usb usb1: udev 1, busnum 1, minor = 0
+[    3.849609] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+[    3.850128] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    3.850646] usb usb1: Product: OMAP-EHCI Host Controller
+[    3.851043] usb usb1: Manufacturer: Linux 3.0.0-1004-linaro-omap ehci_hcd
+[    3.851531] usb usb1: SerialNumber: ehci-omap.0
+[    3.857269] usb usb1: usb_probe_device
+[    3.857391] usb usb1: configuration #1 chosen from 1 choice
+[    3.858551] usb usb1: adding 1-0:1.0 (config #1, interface 0)
+[    3.860687] hub 1-0:1.0: usb_probe_interface
+[    3.860748] hub 1-0:1.0: usb_probe_interface - got id
+[    3.860900] hub 1-0:1.0: USB hub found
+[    3.861663] hub 1-0:1.0: 0 ports detected
+[    3.861968] hub 1-0:1.0: standalone hub
+[    3.861999] hub 1-0:1.0: no power switching (usb 1.0)
+[    3.862060] hub 1-0:1.0: individual port over-current protection
+[    3.862121] hub 1-0:1.0: power on to power good time: 20ms
+[    3.863159] hub 1-0:1.0: local power source is good
+[    3.863281] hub 1-0:1.0: trying to enable port power on non-switchable hub
+[    3.867919] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    3.868408] ohci_hcd: block sizes: ed 64 td 64
+[    3.868988] ohci-omap3 ohci-omap3.0: OMAP3 OHCI Host Controller
+[    3.871643] ohci-omap3 ohci-omap3.0: new USB bus registered, assigned bus number 2
+[    3.872253] ohci-omap3 ohci-omap3.0: starting OHCI controller
+[    3.872802] ohci-omap3 ohci-omap3.0: created debug files
+[    3.872924] ohci-omap3 ohci-omap3.0: irq 76, io mem 0x48064400
+[    3.934722] ohci-omap3 ohci-omap3.0: OHCI controller state
+[    3.934844] ohci-omap3 ohci-omap3.0: OHCI 1.0, NO legacy support registers
+[    3.935058] ohci-omap3 ohci-omap3.0: control 0x283 RWC HCFS=operational CBSR=3
+[    3.935180] ohci-omap3 ohci-omap3.0: cmdstatus 0x00000 SOC=0
+[    3.935394] ohci-omap3 ohci-omap3.0: intrstatus 0x00000000
+[    3.935485] ohci-omap3 ohci-omap3.0: intrenable 0x8000005a MIE RHSC UE RD WDH
+[    3.935852] ohci-omap3 ohci-omap3.0: hcca frame #0001
+[    3.936065] ohci-omap3 ohci-omap3.0: roothub.a 00000203 POTPGT=0 NPS NDP=3(3)
+[    3.936157] ohci-omap3 ohci-omap3.0: roothub.b 00000000 PPCM=0000 DR=0000
+[    3.936309] ohci-omap3 ohci-omap3.0: roothub.status 00008000 DRWE
+[    3.936553] ohci-omap3 ohci-omap3.0: roothub.portstatus [0] 0x00000100 PPS
+[    3.936828] ohci-omap3 ohci-omap3.0: roothub.portstatus [1] 0x00000100 PPS
+[    3.936950] ohci-omap3 ohci-omap3.0: roothub.portstatus [2] 0x00000100 PPS
+[    3.937988] usb usb2: default language 0x0409
+[    3.938476] usb usb2: udev 1, busnum 2, minor = 128
+[    3.938568] usb usb2: New USB device found, idVendor=1d6b, idProduct=0001
+[    3.939849] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    3.941497] usb usb2: Product: OMAP3 OHCI Host Controller
+[    3.942504] usb usb2: Manufacturer: Linux 3.0.0-1004-linaro-omap ohci_hcd
+[    3.943756] usb usb2: SerialNumber: ohci-omap3.0
+[    3.948272] usb usb2: usb_probe_device
+[    3.948303] usb usb2: configuration #1 chosen from 1 choice
+[    3.948638] usb usb2: adding 2-0:1.0 (config #1, interface 0)
+[    3.950347] hub 2-0:1.0: usb_probe_interface
+[    3.950408] hub 2-0:1.0: usb_probe_interface - got id
+[    3.950439] hub 2-0:1.0: USB hub found
+[    3.951049] hub 2-0:1.0: 3 ports detected
+[    3.951354] hub 2-0:1.0: standalone hub
+[    3.951385] hub 2-0:1.0: no power switching (usb 1.0)
+[    3.951446] hub 2-0:1.0: global over-current protection
+[    3.951477] hub 2-0:1.0: power on to power good time: 0ms
+[    3.951751] hub 2-0:1.0: local power source is good
+[    3.951812] hub 2-0:1.0: no over-current condition exists
+[    3.951843] hub 2-0:1.0: trying to enable port power on non-switchable hub
+[    3.957489] usbcore: registered new interface driver cdc_wdm
+[    3.957977] Initializing USB Mass Storage driver...
+[    3.959442] usbcore: registered new interface driver usb-storage
+[    3.959930] USB Mass Storage support registered.
+[    3.962341] usbcore: registered new interface driver libusual
+[    3.964080] usbcore: registered new interface driver usbtest
+[    3.966644] hub 1-0:1.0: state 7 ports 0 chg 0000 evt 0000
+[    3.974060] mousedev: PS/2 mouse device common for all mice
+[    3.979766] input: gpio-keys as /devices/platform/gpio-keys/input/input0
+[    3.993927] input: twl4030_pwrbutton as /devices/platform/omap/omap_i2c.1/i2c-1/1-0049/twl4030_pwrbutton/input/input1
+[    4.005828] twl_rtc twl_rtc: rtc core: registered twl_rtc as rtc0
+[    4.006622] twl_rtc twl_rtc: Power up reset detected.
+[    4.008575] twl_rtc twl_rtc: Enabling TWL-RTC.
+[    4.010375] i2c /dev entries driver
+[    4.016510] Driver for 1-wire Dallas network protocol.
+[    4.020660] omap_device: omap_wdt.-1: new worst case activate latency 0: 30517
+[    4.023345] OMAP Watchdog Timer Rev 0x31: initial timeout 60 sec
+[    4.025634] twl4030_wdt twl4030_wdt: Failed to register misc device
+[    4.026489] twl4030_wdt: probe of twl4030_wdt failed with error -16
+[    4.031921] device-mapper: ioctl: 4.20.0-ioctl (2011-02-02) initialised: dm-devel@redhat.com
+[    4.044982] omap_device: omap_i2c.1: new worst case deactivate latency 0: 91552
+[    4.051391] hub 2-0:1.0: state 7 ports 3 chg 0000 evt 0000
+[    4.154876] omap_device: omap_i2c.1: new worst case activate latency 0: 152587
+[    4.172882] Registered led device: beagleboard::usr0
+[    4.177581] Registered led device: beagleboard::usr1
+[    4.183044] Registered led device: beagleboard::pmu_stat
+[    4.189300] usbcore: registered new interface driver usbhid
+[    4.189880] usbhid: USB HID core driver
+[    4.193267] oprofile: using arm/armv7
+[    4.194915] TCP cubic registered
+[    4.195190] Initializing XFRM netlink socket
+[    4.196960] NET: Registered protocol family 10
+[    4.205078] IPv6 over IPv4 tunneling driver
+[    4.211486] NET: Registered protocol family 17
+[    4.212219] NET: Registered protocol family 15
+[    4.213195] Registering the dns_resolver key type
+[    4.215698] VFP support v0.3: implementor 41 architecture 3 part 30 variant c rev 2
+[    4.220947] ThumbEE CPU extension supported.
+[    4.233581] Registering SWP/SWPB emulation handler
+[    4.253295] omap_device: omap_i2c.1: new worst case activate latency 0: 640869
+[    4.256225] omap_device: omap_i2c.1: new worst case deactivate latency 0: 335693
+[    4.260711] vp_forceupdate_scale_voltage: vdd_mpu TRANXDONE timeout exceeded while tryingto clear the TRANXDONE status
+[    4.262451] vp_forceupdate_scale_voltage: vdd_core TRANXDONE timeout exceeded while tryingto clear the TRANXDONE status
+[    4.343933] mmc0: new SDHC card at address 4567
+[    4.348205] clock: disabling unused clocks to save power
+[    4.365753] mmcblk0: mmc0:4567 QEMU! 3.00 GiB 
+[    4.392669] fbcvt: 1280x720@60: CVT Name - .921M9-R
+[    4.395172]  mmcblk0: p1 p2
+[    4.440368] Console: switching to colour frame buffer device 160x45
+[    4.463104] regulator_init_complete: VDAC: incomplete constraints, leaving on
+[    4.465881] twl_rtc twl_rtc: setting system clock to 2014-03-15 08:58:25 UTC (1394873905)
+[    4.485565] Freeing init memory: 320K
+[    5.035125] ohci-omap3 ohci-omap3.0: auto-stop root hub
+[    5.422637] udev[646]: starting version 167
+[    6.051513] hub 1-0:1.0: hub_suspend
+[    6.052307] usb usb1: bus auto-suspend
+[    6.052368] ehci-omap ehci-omap.0: suspend root hub
+[    6.055511] hub 2-0:1.0: hub_suspend
+[    6.055572] usb usb2: bus auto-suspend
+[    6.055664] ohci-omap3 ohci-omap3.0: suspend root hub
+[   11.352569] EXT4-fs (mmcblk0p2): mounted filesystem with ordered data mode. Opts: (null)
+[   18.263244] udev[803]: starting version 167
+[   18.458251] EXT4-fs (mmcblk0p2): re-mounted. Opts: errors=remount-ro

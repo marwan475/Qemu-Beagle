@@ -1,0 +1,13 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libgpg-error0
+/usr/share/doc/libgpg-error0/changelog.Debian.gz
+/usr/share/doc/libgpg-error0/copyright
+/usr/share/doc/libgpg-error0/README
+/usr/share/doc/libgpg-error0/NEWS.gz
+/lib
+/lib/arm-linux-gnueabi
+/lib/arm-linux-gnueabi/libgpg-error.so.0.8.0
+/lib/arm-linux-gnueabi/libgpg-error.so.0

@@ -1,0 +1,17 @@
+d3c3736a368cbf7f7d663c9684913952  usr/bin/pyclean
+5b958cd2129b5308516bb6979a7a4c5a  usr/bin/pycompile
+ac7e0e5d3c664235a88ea7529f127243  usr/share/doc/python-minimal/README.Debian
+c8f4b14b138141384c6be93ae9deacd7  usr/share/doc/python-minimal/changelog.Debian.gz
+70fb7c3c3801d76a5c5db08a36f8179c  usr/share/doc/python-minimal/copyright
+0084297bfde674d1f98c71631ba70a01  usr/share/man/man1/pyclean.1.gz
+62fa89add067361238b21029da025137  usr/share/man/man1/pycompile.1.gz
+122b661b1b8bd398d2b52f887b835720  usr/share/man/man1/pyversions.1.gz
+c0401d33e8d5bd9b1143b199cdb68f66  usr/share/python/debian_defaults
+d41d8cd98f00b204e9800998ecf8427e  usr/share/python/debpython/__init__.py
+ae958c26aff355ce7da1c3f8b8292850  usr/share/python/debpython/debhelper.py
+8ecaf7c46b778a039a37d769bc02bf8d  usr/share/python/debpython/depends.py
+cccb186cb42bc38b87bda0e2bc77d024  usr/share/python/debpython/option.py
+3201916311ceb1b98da8b75477fe7b3e  usr/share/python/debpython/pydist.py
+f00048bd4daf3118c4e5ac436028b9d3  usr/share/python/debpython/tools.py
+8b6f57bc4ab45e90f7d7b56bc1ee60ab  usr/share/python/debpython/version.py
+54d2246bef7eb2a0f437c158e621b28a  usr/share/python/pyversions.py

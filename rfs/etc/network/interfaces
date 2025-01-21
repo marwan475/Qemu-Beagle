@@ -1,0 +1,5 @@
+# interfaces(5) file used by ifup(8) and ifdown(8)
+auto lo usb0 eth0
+iface lo inet loopback
+iface eth0 inet dhcp
+iface usb0 inet dhcp

@@ -1,0 +1,12 @@
+/.
+/lib
+/lib/arm-linux-gnueabi
+/lib/arm-linux-gnueabi/libdrm.so.2.4.0
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libdrm2
+/usr/share/doc/libdrm2/NEWS.Debian.gz
+/usr/share/doc/libdrm2/copyright
+/usr/share/doc/libdrm2/changelog.Debian.gz
+/lib/arm-linux-gnueabi/libdrm.so.2
