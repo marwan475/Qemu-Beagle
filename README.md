@@ -225,7 +225,7 @@ umount /mnt/beagle
 
 ## booting up
 
-one issue we will face is the init script will fail to mount or rfs so we have to do it manually
+one issue we will face is the init script will fail to mount our rfs so we have to do it manually
 
 Boot up qemu
 ```sh
