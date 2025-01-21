@@ -24,7 +24,7 @@ with this knowledge we know we wont be able to emulate the BBB perfectly but we 
 
 the linaro qemu for is located at https://git.linaro.org/qemu/qemu-linaro.git
 
-*note this is an old repo meaning python 2 is required to be able to build it, you may have to build python2 yourself or give
+*note this is an old repo meaning python 2 is required to be able to build it, you may have to build python2 yourself 
 
 ```sh
 wget https://www.python.org/ftp/python/2.7.18/Python-2.7.18.tgz
@@ -34,6 +34,8 @@ cd Python-2.7.18
 make -j$(nproc)
 sudo make install -j$(nproc)
 ```
+
+Building qemu-linaro
 
 ```sh
 
