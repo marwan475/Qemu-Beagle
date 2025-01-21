@@ -60,4 +60,16 @@ then the executable we need can be found in qemu-linaro/build/arm-softmmu/qemu-s
 
 copy that executable into your working directory
 
+```sh
+# test build using this command
+./qemu-system-arm -M beagle -cpu cortex-a8 -m 512M -clock unix -serial stdio -usb -device usb-kbd -k /usr/share/qemu/keymaps/en-us
+```
+-k points to keymap file, if you can find that file or is in diffrent path, update path or use the file I provided in the repo
+
+*note the emulation will dump registers and crash, this is normal as we havent given it an img file to boot off of yet
+
+
+
+
+
 
