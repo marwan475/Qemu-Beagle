@@ -23,7 +23,7 @@ with this knowledge we know we wont be able to emulate the BBB perfectly but we 
 
 ## Setting up qemu-linaro
 
-the linaro qemu for is located at https://git.linaro.org/qemu/qemu-linaro.git
+the linaro qemu fork is located at https://git.linaro.org/qemu/qemu-linaro.git
 
 *note this is an old repo meaning python 2 is required to be able to build it, you may have to build python2 yourself 
 
