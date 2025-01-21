@@ -1,0 +1,27 @@
+#!/bin/sh
+set -e
+
+divert() {
+	dfile=$1
+	ltarget=$2
+	div=$(dpkg-divert --list $dfile)
+	distrib=${3:-$dfile.distrib}
+	if [ -z "$div" ]; then
+		dpkg-divert --package dash --divert $distrib --add $dfile
+		# This differs from dpkg-divert's --rename because we
+		# first make a copy of $dfile (the file being diverted)
+		# in $distrib. Then, a symlink to $ltarget is forcibly created
+		# from $dfile.
+		# dpkg-divert's --rename direct equivalent would be:
+		# mv $dfile $distrib -- but we could end up without a symlink
+		cp -dp $dfile $distrib
+		ln -sf $ltarget $dfile
+	fi
+}
+
+# Divert the following files if no diversion exists already
+# It is currently used to prevent the files collision between bash and
+# dash: they both provide the files in the package.
+divert /bin/sh dash
+divert /usr/share/man/man1/sh.1.gz dash.1.gz \
+	/usr/share/man/man1/sh.distrib.1.gz

@@ -1,0 +1,5 @@
+# /etc/apt/sources.list
+
+deb http://ports.ubuntu.com/ natty main universe
+deb http://ports.ubuntu.com/ natty-security main universe
+deb http://ports.ubuntu.com/ natty-updates main universe

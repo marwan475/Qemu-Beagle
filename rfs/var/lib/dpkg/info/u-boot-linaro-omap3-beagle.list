@@ -1,0 +1,11 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/u-boot-linaro-omap3-beagle
+/usr/share/doc/u-boot-linaro-omap3-beagle/changelog.Debian.gz
+/usr/share/doc/u-boot-linaro-omap3-beagle/copyright
+/usr/lib
+/usr/lib/u-boot
+/usr/lib/u-boot/omap3_beagle
+/usr/lib/u-boot/omap3_beagle/u-boot.bin

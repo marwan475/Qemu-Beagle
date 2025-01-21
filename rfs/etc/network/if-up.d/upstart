@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+if [ "$IFACE" = lo ]; then
+	exit 0 # emission handled by /etc/init/network-interface.conf
+fi
+
+initctl emit -n net-device-up \
+	"IFACE=$IFACE" \
+	"LOGICAL=$LOGICAL" \
+	"ADDRFAM=$ADDRFAM" \
+	"METHOD=$METHOD"

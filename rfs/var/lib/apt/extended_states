@@ -1,0 +1,84 @@
+Package: libpopt0
+Architecture: armel
+Auto-Installed: 1
+
+Package: console-terminus
+Architecture: armel
+Auto-Installed: 1
+
+Package: libcap2
+Architecture: armel
+Auto-Installed: 1
+
+Package: linaro-overlay
+Architecture: armel
+Auto-Installed: 1
+
+Package: xkb-data
+Architecture: armel
+Auto-Installed: 1
+
+Package: kbd
+Architecture: armel
+Auto-Installed: 1
+
+Package: isc-dhcp-common
+Architecture: armel
+Auto-Installed: 1
+
+Package: ucf
+Architecture: armel
+Auto-Installed: 1
+
+Package: keyboard-configuration
+Architecture: armel
+Auto-Installed: 1
+
+Package: libnewt0.52
+Architecture: armel
+Auto-Installed: 1
+
+Package: live-config-upstart
+Architecture: armel
+Auto-Installed: 1
+
+Package: linux-image-linaro-omap
+Architecture: armel
+Auto-Installed: 1
+
+Package: uboot-mkimage
+Architecture: armel
+Auto-Installed: 1
+
+Package: u-boot-linaro-omap3-beagle
+Architecture: armel
+Auto-Installed: 1
+
+Package: u-boot-tools
+Architecture: armel
+Auto-Installed: 1
+
+Package: linux-image-3.0.0-1004-linaro-omap
+Architecture: armel
+Auto-Installed: 1
+
+Package: devio
+Architecture: armel
+Auto-Installed: 1
+
+Package: wireless-crda
+Architecture: armel
+Auto-Installed: 1
+
+Package: flash-kernel
+Architecture: armel
+Auto-Installed: 1
+
+Package: x-loader-omap3-beagle
+Architecture: armel
+Auto-Installed: 1
+
+Package: linux-firmware
+Architecture: armel
+Auto-Installed: 1
+

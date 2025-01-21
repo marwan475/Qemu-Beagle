@@ -1,0 +1,25 @@
+
+Start-Date: 2011-08-23  05:24:29
+Commandline: apt-get --yes --force-yes --force-yes install ubuntu-keyring
+Install: ubuntu-keyring:armel (2010.+09.30)
+End-Date: 2011-08-23  05:24:31
+
+Start-Date: 2011-08-23  05:25:02
+Commandline: apt-get --yes --force-yes upgrade
+Upgrade: libkrb5-3:armel (1.8.3+dfsg-5ubuntu2, 1.8.3+dfsg-5ubuntu2.1), libpam0g:armel (1.1.2-2ubuntu8, 1.1.2-2ubuntu8.3), libpam-modules-bin:armel (1.1.2-2ubuntu8, 1.1.2-2ubuntu8.3), libkrb5support0:armel (1.8.3+dfsg-5ubuntu2, 1.8.3+dfsg-5ubuntu2.1), base-files:armel (5.0.0ubuntu28, 5.0.0ubuntu28linaro6), libpam-modules:armel (1.1.2-2ubuntu8, 1.1.2-2ubuntu8.3), libplymouth2:armel (0.8.2-2ubuntu22, 0.8.2-2ubuntu23), libdbus-1-3:armel (1.4.6-1ubuntu6, 1.4.6-1ubuntu6.1), libpam-runtime:armel (1.1.2-2ubuntu8, 1.1.2-2ubuntu8.3), apt-transport-https:armel (0.8.13.2ubuntu2, 0.8.13.2ubuntu4.1), perl-base:armel (5.10.1-17ubuntu4, 5.10.1-17ubuntu4.1), initramfs-tools-bin:armel (0.98.8ubuntu3, 0.98.8ubuntu3.1), libcurl3-gnutls:armel (7.21.3-1ubuntu1, 7.21.3-1ubuntu1.2), libk5crypto3:armel (1.8.3+dfsg-5ubuntu2, 1.8.3+dfsg-5ubuntu2.1), initramfs-tools:armel (0.98.8ubuntu3, 0.98.8ubuntu3.1), apt:armel (0.8.13.2ubuntu2, 0.8.13.2ubuntu4.1), libpng12-0:armel (1.2.44-1ubuntu3, 1.2.44-1ubuntu3.1), tzdata:armel (2011f-1, 2011g-0ubuntu0.11.04), libgssapi-krb5-2:armel (1.8.3+dfsg-5ubuntu2, 1.8.3+dfsg-5ubuntu2.1), plymouth:armel (0.8.2-2ubuntu22, 0.8.2-2ubuntu23)
+End-Date: 2011-08-23  05:25:35
+
+Start-Date: 2011-08-23  05:25:55
+Commandline: apt-get --yes --force-yes install linaro-overlay-minimal linaro-nano
+Install: libpopt0:armel (1.16-1, automatic), console-terminus:armel (4.30-2, automatic), iproute:armel (20100519-3), whiptail:armel (0.52.11-2ubuntu7), iputils-ping:armel (20100418-3ubuntu1), libcap2:armel (2.20-1, automatic), linaro-overlay:armel (1105.2, automatic), isc-dhcp-client:armel (4.1.1-P1-15ubuntu9.1), apt-utils:armel (0.8.13.2ubuntu4.1), xkb-data:armel (2.1-1ubuntu3, automatic), netbase:armel (4.45ubuntu1), sudo:armel (1.7.4p4-5ubuntu7.1), kbd:armel (1.15-1ubuntu5, automatic), isc-dhcp-common:armel (4.1.1-P1-15ubuntu9.1, automatic), ucf:armel (3.0025+nmu1ubuntu1, automatic), keyboard-configuration:armel (1.57ubuntu20, automatic), console-setup:armel (1.57ubuntu20), libnewt0.52:armel (0.52.11-2ubuntu7, automatic), ntpdate:armel (4.2.6.p2+dfsg-1ubuntu5.1), rsyslog:armel (4.6.4-2ubuntu4), linaro-overlay-minimal:armel (1105.2), linaro-nano:armel (019), netcat-openbsd:armel (1.89-3ubuntu5)
+End-Date: 2011-08-23  05:27:12
+
+Start-Date: 2011-08-23  05:27:23
+Commandline: apt-get --yes --force-yes install live-config live-config-
+Install: live-config:armel (2.0.14-1), live-config-upstart:armel (2.0.14-1, automatic)
+End-Date: 2011-08-23  05:27:24
+
+Start-Date: 2014-03-15  08:55:52
+Commandline: /usr/bin/apt-get -o Dir::Etc::SourceList=/tmp/tmp.pd837PTmnD/sources.list install devio=1.2-1build1 flash-kernel=2.28ubuntu19linaro2 linux-firmware=1.52 linux-image-3.0.0-1004-linaro-omap=3.0.0-1004.5~ppa~natty linux-image-linaro-omap=3.0.0.1004.5 u-boot-tools=2010.12-2 x-loader-omap3-beagle=1.5.1+git20110715+fca7cd2-1ubuntu2~natty2 u-boot-linaro-omap3-beagle=2011.08.4-0ubuntu1~ppa~natty1 uboot-mkimage=2010.12-2 wireless-crda=1.13 hwpack-linaro-omap3=20110823-0
+Install: hwpack-linaro-omap3:armel (20110823-0), linux-image-linaro-omap:armel (3.0.0.1004.5), uboot-mkimage:armel (2010.12-2), u-boot-linaro-omap3-beagle:armel (2011.08.4-0ubuntu1~ppa~natty1), u-boot-tools:armel (2010.12-2), linux-image-3.0.0-1004-linaro-omap:armel (3.0.0-1004.5~ppa~natty), devio:armel (1.2-1build1), wireless-crda:armel (1.13), flash-kernel:armel (2.28ubuntu19linaro2), x-loader-omap3-beagle:armel (1.5.1+git20110715+fca7cd2-1ubuntu2~natty2), linux-firmware:armel (1.52)
+End-Date: 2014-03-15  08:56:15

@@ -1,0 +1,2 @@
+# sources.list part for the Linaro overlay ppa
+deb http://ppa.launchpad.net/linaro-maintainers/overlay/ubuntu natty main

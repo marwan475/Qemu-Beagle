@@ -1,0 +1,12 @@
+0a291f3f1013ce48e092dda87caf178c  sbin/mkhomedir_helper
+a482cc07678ea8cf90dadb5d4df86687  sbin/pam_tally
+122830245c2b62e38c6f4fc74af571a9  sbin/pam_tally2
+9a5dc7e93c2f80c3526d140ed48bac0b  sbin/unix_chkpwd
+fa77c48b13a456408a657742c0138af9  sbin/unix_update
+a8215173a307fce152aa7f888b37d6a8  usr/share/doc/libpam-modules-bin/NEWS.Debian.gz
+b67612d4bd1e4c7924dec3b52165cefc  usr/share/doc/libpam-modules-bin/changelog.Debian.gz
+6c05e902bc75c9e6d2da3ac75da5d47b  usr/share/doc/libpam-modules-bin/copyright
+3a6fb53b963b2d17950d0b129636e631  usr/share/lintian/overrides/libpam-modules-bin
+5e4e40cea86c72a5e49497b541a1e837  usr/share/man/man8/mkhomedir_helper.8.gz
+7a21db8430a6903057b71a850ab280a6  usr/share/man/man8/unix_chkpwd.8.gz
+21b007956c7cca3b7831746972189d8d  usr/share/man/man8/unix_update.8.gz

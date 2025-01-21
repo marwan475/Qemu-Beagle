@@ -1,0 +1,12 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/live-config-upstart
+/usr/share/doc/live-config-upstart/copyright
+/usr/share/doc/live-config-upstart/changelog.Debian.gz
+/etc
+/etc/init.d
+/etc/init
+/etc/init/live-config.conf
+/etc/init.d/live-config

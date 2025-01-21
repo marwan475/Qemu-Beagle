@@ -1,0 +1,3 @@
+# UNCONFIGURED FSTAB FOR BASE SYSTEM
+
+UUID=77815a80-afb8-437c-8bc9-65f522e2457d / ext4  errors=remount-ro 0 1

@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+# Automatically added by dh_installinit
+if [ -e "/etc/init/rsyslog.conf" ] && [ "$1" = remove ]; then
+	# stop fails if not running
+	stop rsyslog || :
+fi
+# End automatically added section

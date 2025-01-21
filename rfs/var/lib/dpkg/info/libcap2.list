@@ -1,0 +1,10 @@
+/.
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/libcap2
+/usr/share/doc/libcap2/changelog.Debian.gz
+/usr/share/doc/libcap2/copyright
+/lib
+/lib/libcap.so.2.20
+/lib/libcap.so.2
