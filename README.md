@@ -81,6 +81,63 @@ our sd card will have 2 partitions
   - board.dtb
 - partition 2 will be our root file system
 
+#### Creating virtual img
+
+```sh
+# create img file
+dd if=/dev/zero of=beaglebone.img bs=1M count=4096
+```
+
+create partitions using parted
+
+```sh
+parted beaglebone.img
+
+mklabel msdos
+
+mkpart primary fat32 63s 106495s
+
+mkpart primary ext4 106496s 6291455s
+
+quit
+```
+
+mark first partition as bootable using fdisk
+
+```sh
+fdisk beaglebone.img
+
+3. Mark it as bootable:
+    - `a` → Toggle bootable flag.
+    - set it to 1
+4. Write changes:
+    - `w`.
+```
+
+format partitions
+
+
+```sh
+# check if any loops are in use
+losetup
+
+# kill any in use that you dont need
+losetup -d /dev/loop0
+
+#set up loop device
+sudo losetup --partscan /dev/loop0 beaglebone.img
+
+#partition 1 FAT 32 bootable
+mkfs.vfat -F 32 /dev/loop0p1
+
+#partition 2 linux root file system
+mkfs.ext4 /dev/loop0p2
+
+#unmount loop device
+losetup -d /dev/loop0
+
+```
+
 
 
 
