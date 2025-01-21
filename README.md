@@ -68,6 +68,18 @@ copy that executable into your working directory
 
 *note the emulation will dump registers and crash, this is normal as we havent given it an img file to boot off of yet
 
+## Building sd card img
+
+our sd card will have 2 partitions
+- partition 1 will be the boot partition
+  - MLO
+  - u-boot
+  - uEnv.txt
+  - uInitrd
+  - uImage
+  - board.dtb
+- partition 2 will be our root file system
+
 
 
 
