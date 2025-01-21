@@ -1,6 +1,0 @@
-/etc/default/rsyslog
-/etc/rsyslog.conf
-/etc/init/rsyslog.conf
-/etc/init/dmesg.conf
-/etc/logrotate.d/rsyslog
-/etc/logcheck/ignore.d.server/rsyslog

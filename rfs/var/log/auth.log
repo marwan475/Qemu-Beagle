@@ -1,8 +1,0 @@
-Mar 15 08:57:45 linaro-nano login[1004]: pam_unix(login:session): session opened for user root by LOGIN(uid=0)
-Mar 15 08:57:46 linaro-nano login[1074]: ROOT LOGIN  on '/dev/ttyO2'
-Mar 15 08:57:47 linaro-nano login[1083]: pam_unix(login:session): session opened for user root by (uid=0)
-Mar 15 08:57:47 linaro-nano login[1104]: ROOT LOGIN  on '/dev/tty1'
-Mar 15 08:58:52 linaro-nano login[1016]: pam_unix(login:session): session opened for user root by LOGIN(uid=0)
-Mar 15 08:58:53 linaro-nano login[1077]: ROOT LOGIN  on '/dev/ttyO2'
-Mar 15 08:58:55 linaro-nano login[1096]: pam_unix(login:session): session opened for user root by (uid=0)
-Mar 15 08:58:55 linaro-nano login[1113]: ROOT LOGIN  on '/dev/tty1'

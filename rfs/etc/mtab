@@ -1,9 +1,0 @@
-/dev/mmcblk0p2 / ext4 rw,errors=remount-ro 0 0
-none /proc proc rw,noexec,nosuid,nodev 0 0
-none /proc/sys/fs/binfmt_misc binfmt_misc rw,noexec,nosuid,nodev 0 0
-none /sys sysfs rw,noexec,nosuid,nodev 0 0
-none /dev devtmpfs rw,mode=0755 0 0
-none /dev/pts devpts rw,noexec,nosuid,gid=5,mode=0620 0 0
-none /dev/shm tmpfs rw,nosuid,nodev 0 0
-none /var/run tmpfs rw,nosuid,mode=0755 0 0
-none /var/lock tmpfs rw,noexec,nosuid,nodev 0 0
