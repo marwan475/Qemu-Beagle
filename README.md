@@ -138,7 +138,37 @@ losetup -d /dev/loop0
 
 ```
 
+## Adding files to sd img
 
+we need to add MLO, u-boot.img, uIntrd, uEnv.txt into the first partition
+
+i have included files for the boot partition in the repo that work with this config, building these files can be tedious so i added them to save time
+
+```sh
+mkdir /mnt/beagle
+
+sudo losetup --partscan /dev/loop0 beaglebone.img
+
+sudo mount /dev/loop0p1 /mnt/beagle
+
+sudo cp bootpartition/* /mnt/beagle
+
+umount /mnt/beagle
+
+```
+
+do the same for the root file system, ive also added in a working rfs for time saving
+
+```sh
+sudo mount /dev/loop0p2 /mnt/beagle/
+
+sudo cp rfs/* /mnt/beagle/
+
+umount /mnt/beagle
+
+losetup -d /dev/loop0
+
+```
 
 
 
