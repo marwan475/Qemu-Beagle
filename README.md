@@ -157,7 +157,7 @@ umount /mnt/beagle
 
 ```
 
-# Getting the Root file system
+## Getting the Root file system
 
 we are gonna steal it from the offical image
 
