@@ -1,6 +1,0 @@
-[D-BUS Service]
-Name=org.freedesktop.PackageKit
-Exec=/usr/libexec/packagekitd
-User=root
-SystemdService=packagekit.service
-

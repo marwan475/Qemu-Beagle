@@ -1,6 +1,0 @@
-6ac93395cf8909d2f14451c593330413  usr/lib/arm-linux-gnueabihf/libssh.so.4.9.5
-3546149bd648f5173575acae381c75f0  usr/share/doc/libssh-4/README.Debian
-7cc1b93af8ff82bafb03673b3f3ed102  usr/share/doc/libssh-4/changelog.Debian.gz
-acd9d00dd40040a688ab2a4d17e796df  usr/share/doc/libssh-4/changelog.gz
-6b800f9ac1f1b1a9a84851daa6c392f5  usr/share/doc/libssh-4/copyright
-da6d38b8f271c44275a864675c3c3165  usr/share/lintian/overrides/libssh-4

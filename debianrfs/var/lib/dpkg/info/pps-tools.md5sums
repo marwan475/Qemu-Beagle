@@ -1,9 +1,0 @@
-c93d57f01df0d17757ba36aea0fde104  usr/bin/ppsctl
-bb0858ecc96b3905f1f0c448a07d3107  usr/bin/ppsfind
-cf752b525d72ad9dc5e050cfd0a53faf  usr/bin/ppsldisc
-5e2772450844c31fb7d9002a858795d5  usr/bin/ppstest
-f4268f5a995a2481ac62914b37f3ed78  usr/bin/ppswatch
-e184a5dd55115c544eaa7d82b25a420f  usr/include/sys/timepps.h
-a6f502c0e894b8e6952df7c7551203ae  usr/share/doc/pps-tools/changelog.Debian.gz
-71402c91b179eb22413f391cc42479a3  usr/share/doc/pps-tools/copyright
-71891e5bd6e094327ec2f676aa44ac12  usr/share/man/man8/pps-tools.8.gz

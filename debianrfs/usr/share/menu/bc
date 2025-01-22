@@ -1,1 +1,0 @@
-?package(bc):needs="text" section="Applications/Science/Mathematics" title="Bc" hints="Calculators" command="/usr/bin/bc"

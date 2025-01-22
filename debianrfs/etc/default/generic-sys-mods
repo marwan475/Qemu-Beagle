@@ -1,4 +1,0 @@
-#This file is sourced by bb-growpart
-ROOT_DRIVE=/dev/mmcblk0
-ROOT_PARTITION=1
-ARCH_SOC_MODULES=am335x

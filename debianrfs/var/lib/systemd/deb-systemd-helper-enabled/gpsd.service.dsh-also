@@ -1,2 +1,0 @@
-/etc/systemd/system/sockets.target.wants/gpsd.socket
-/etc/systemd/system/multi-user.target.wants/gpsd.service

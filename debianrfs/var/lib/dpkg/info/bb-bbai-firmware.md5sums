@@ -1,6 +1,0 @@
-30bba5424cc300577c6a3f1071832d59  lib/firmware/bbb.io/cyfmac43455-sdio.bin
-977f6e170e14f2d326e13392a1dc01d5  lib/firmware/bbb.io/cyfmac43455-sdio.clm_blob
-d3ad92472ef030c3897062ff809a9083  lib/firmware/brcm/brcmfmac43455-sdio.beagleboard.org,am5729-beagleboneai.txt
-501ca4e8307ad8e71c32f0d24369bada  lib/firmware/brcm/brcmfmac43455-sdio_am5729-beagleboneai.bin
-501ca4e8307ad8e71c32f0d24369bada  lib/firmware/brcm/fw_bcm43455c0_ag.bin
-d0f4634cb31e87ec74afc9cbe04da5db  usr/share/doc/bb-bbai-firmware/changelog.Debian.gz

@@ -1,8 +1,0 @@
-2a916ba9fbd6e50dfa89642fbc1c0f46  usr/bin/cgps
-d6ccd150202796f079dcee260cf37391  usr/bin/gpsmon
-9e4826ce2bcfa70cb7414fc86cce9fcc  usr/share/doc/gpsd-tools/changelog.Debian.armhf.gz
-904cf28eb3f8ddab7e0554d3f65e121d  usr/share/doc/gpsd-tools/changelog.Debian.gz
-19279a5492f142fd851d23891faf4c65  usr/share/doc/gpsd-tools/changelog.gz
-793473a114952efb5dfaa89fc86506a7  usr/share/doc/gpsd-tools/copyright
-e10082b0c7ced074c61b15283450349f  usr/share/man/man1/cgps.1.gz
-0f606ac0d766eb3b839f179164d9da77  usr/share/man/man1/gpsmon.1.gz

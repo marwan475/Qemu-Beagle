@@ -1,9 +1,0 @@
-92c4c64f951f896ed8094309b4fb75be  lib/systemd/system/bb-usb-gadgets.service
-65b5313672fcb55aedcd64428c6489a0  usr/bin/autoconfigure_usb0.sh
-992c8d488a7e282ee095c7c8ce313f4a  usr/bin/autoconfigure_usb1.sh
-8f719cfe898607a93a811dfdf10dead5  usr/bin/bb-start-acm-ncm-rndis-old-gadget
-12a4250f80c097a4c2c1acc2ce9bc3c3  usr/bin/bb-start-usb-gadgets
-f3409b407f0bad43f7f56604c2fb840c  usr/bin/bb_dnsmasq_config.sh
-7a3e21fab7ca2d820962e04462136294  usr/bin/bb_generate_mac.sh
-f935f35a4f7855323c0f6deb36336f34  usr/share/doc/bb-usb-gadgets/changelog.Debian.gz
-61a7c7c298652e07e0c0260ef8707942  usr/share/doc/bb-usb-gadgets/copyright

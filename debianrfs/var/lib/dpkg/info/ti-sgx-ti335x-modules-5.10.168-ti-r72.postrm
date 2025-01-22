@@ -1,7 +1,0 @@
-#!/bin/sh
-set -e
-# Automatically added by dh_installmodules/13.11.4
-if [ -e /boot/System.map-5.10.168-ti-r72 ]; then
-	depmod -a -F /boot/System.map-5.10.168-ti-r72 5.10.168-ti-r72 || true
-fi
-# End automatically added section

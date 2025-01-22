@@ -1,1 +1,0 @@
-../../../javascript/sphinxdoc/1.0/_sphinx_javascript_frameworks_compat.js
