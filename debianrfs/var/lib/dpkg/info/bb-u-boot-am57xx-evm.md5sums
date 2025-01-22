@@ -1,0 +1,6 @@
+ff1ddf449ce927641ea7fd78006826dd  opt/u-boot/bb-u-boot-am57xx-evm/MLO
+c479f491fdd3b440817672c063675987  opt/u-boot/bb-u-boot-am57xx-evm/install-mmcblk0.sh
+0f203f7aada767067d306ac38bc1ef37  opt/u-boot/bb-u-boot-am57xx-evm/install-mmcblk1.sh
+f598752a314eb5cf67778c4d06f874ea  opt/u-boot/bb-u-boot-am57xx-evm/install.sh
+20f39a7586dd08d006d1892e2fb9cd84  opt/u-boot/bb-u-boot-am57xx-evm/u-boot-dtb.img
+017e8f7ee7280a785ab6ceb76f7de1c2  usr/share/doc/bb-u-boot-am57xx-evm/changelog.Debian.gz

@@ -1,0 +1,6 @@
+a270e2dd8f08eaaef8e34916e1cb47ad  usr/lib/arm-linux-gnueabihf/libblkid.so.1.1.0
+b02d431e7dfb69cf3b691f570910bb9b  usr/share/doc/libblkid1/changelog.Debian.armhf.gz
+df8802a21c8a13c3f23c0cfc7c1ea6f0  usr/share/doc/libblkid1/changelog.Debian.gz
+0bb7fd1ae3732779966184f543b8a91e  usr/share/doc/libblkid1/changelog.gz
+353888f385cfb82eb97a693e78f3cc9b  usr/share/doc/libblkid1/copyright
+971f3917bb9c3d6316b154d38d47b7cb  usr/share/lintian/overrides/libblkid1

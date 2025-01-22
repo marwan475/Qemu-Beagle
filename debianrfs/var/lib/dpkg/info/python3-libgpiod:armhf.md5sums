@@ -1,0 +1,10 @@
+f208e574c53f00a5008df25174858572  usr/lib/python3/dist-packages/gpiod.cpython-311-arm-linux-gnueabihf.so
+2cd3ed2351650c16d3c34c79b0208d00  usr/share/doc/python3-libgpiod/changelog.Debian.armhf.gz
+7e8b3d1d80951a89d2fe2a7dde7d44b5  usr/share/doc/python3-libgpiod/changelog.Debian.gz
+abcf7fc096c9e2afeccd13aa6e3e0806  usr/share/doc/python3-libgpiod/copyright
+4b28021000fa0be842f326e59869f380  usr/share/doc/python3-libgpiod/examples/gpiodetect.py
+8631dba8620c59b5230faa3d0519ea0d  usr/share/doc/python3-libgpiod/examples/gpiofind.py
+721b2d0d80c5e881bb3b36c7055273aa  usr/share/doc/python3-libgpiod/examples/gpioget.py
+265eba7dc33e56aead8a051bca122683  usr/share/doc/python3-libgpiod/examples/gpioinfo.py
+5bdc9e780c7f49ac80cc00f12c7ea033  usr/share/doc/python3-libgpiod/examples/gpiomon.py
+01dfe5dfc1b9e970fce8921cc4990ea2  usr/share/doc/python3-libgpiod/examples/gpioset.py

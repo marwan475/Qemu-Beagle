@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/bin
+/usr/bin/tree
+/usr/share
+/usr/share/doc
+/usr/share/doc/tree
+/usr/share/doc/tree/README.gz
+/usr/share/doc/tree/TODO
+/usr/share/doc/tree/changelog.Debian.gz
+/usr/share/doc/tree/changelog.gz
+/usr/share/doc/tree/copyright
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/tree.1.gz

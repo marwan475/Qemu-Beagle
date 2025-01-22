@@ -1,0 +1,17 @@
+libinih.so.1 libinih1 #MINVER#
+* Build-Depends-Package: libinih-dev
+ ini_allow_bom@Base 41
+ ini_allow_inline_comments@Base 41
+ ini_allow_multiline@Base 41
+ ini_allow_no_value@Base 47
+ ini_allow_realloc@Base 41
+ ini_initial_alloc@Base 41
+ ini_inline_comment_prefixes@Base 41
+ ini_max_line@Base 41
+ ini_parse@Base 40
+ ini_parse_file@Base 40
+ ini_parse_stream@Base 40
+ ini_parse_string@Base 40
+ ini_start_comment_prefixes@Base 41
+ ini_stop_on_first_error@Base 41
+ ini_use_stack@Base 41

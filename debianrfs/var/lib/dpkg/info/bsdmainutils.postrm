@@ -1,0 +1,38 @@
+#!/bin/sh
+
+set -e 
+
+mvverbose=-v
+
+# from dpkg-maintscript-helper, modified
+ensure_package_owns_file() {
+	local PACKAGE="$1"
+	local FILE="$2"
+
+	dpkg-query -L "$PACKAGE" | grep -F -q -x "$FILE"
+}
+
+# from dpkg-maintscript-helper
+abort_rm_conffile() {
+	local CONFFILE="$1"
+	local PACKAGE="$2"
+
+	ensure_package_owns_file "$PACKAGE" "$CONFFILE" || return 0
+
+	if [ -e "$CONFFILE.dpkg-remove" ]; then
+		echo "Reinstalling $CONFFILE that was moved away"
+		mv $mvverbose "$CONFFILE.dpkg-remove" "$CONFFILE"
+	fi
+	if [ -e "$CONFFILE.dpkg-backup" ]; then
+		echo "Reinstalling $CONFFILE that was backupped"
+		mv $mvverbose "$CONFFILE.dpkg-backup" "$CONFFILE"
+	fi
+}
+
+if [ "$1" = abort-upgrade ] && dpkg --compare-versions "$2" lt 12.1.6; then
+	abort_rm_conffile /etc/default/bsdmainutils
+	abort_rm_conffile /etc/cron.daily/bsdmainutils
+fi
+
+
+

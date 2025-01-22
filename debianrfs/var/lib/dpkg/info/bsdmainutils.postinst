@@ -1,0 +1,39 @@
+#!/bin/sh
+
+set -e
+
+mvverbose=-v
+
+# from dpkg-maintscript-helper, modified
+ensure_package_owns_file() {
+	local PACKAGE="$1"
+	local FILE="$2"
+
+	dpkg-query -L "$PACKAGE" | grep -F -q -x "$FILE"
+}
+
+# from dpkg-maintscript-helper, modified
+finish_mv_conffile() {
+	local CONFFILE="$1"
+	local NEWCONFFILE="$2"
+	local PACKAGE="$3"
+
+	rm $mvverbose -f "$CONFFILE.dpkg-remove"
+
+	[ -e "$CONFFILE.dpkg-backup" ] || return 0
+	ensure_package_owns_file "$PACKAGE" "$NEWCONFFILE" || return 0
+
+	echo "Preserving user changes to $NEWCONFFILE (now owned by $PACKAGE)..."
+	if [ -e "$NEWCONFFILE" ]; then
+		mv $mvverbose -f "$NEWCONFFILE" "$NEWCONFFILE.dpkg-new"
+	fi
+	mv $mvverbose -f "$CONFFILE.dpkg-backup" "$NEWCONFFILE"
+}
+
+if [ "$1" = configure ] && [ -n "$2" ] && dpkg --compare-versions "$2" lt 12.1.6; then
+	finish_mv_conffile /etc/default/bsdmainutils /etc/default/calendar calendar
+	finish_mv_conffile /etc/cron-daily/bsdmainutils /etc/cron.daily/calendar calendar
+fi
+
+
+

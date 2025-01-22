@@ -1,0 +1,9 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libctf.so.0.0.0
+/usr/share
+/usr/share/doc
+/usr/lib/arm-linux-gnueabihf/libctf.so.0
+/usr/share/doc/libctf0

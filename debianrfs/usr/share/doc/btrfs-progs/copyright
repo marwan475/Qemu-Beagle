@@ -1,0 +1,53 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Contact: linux-btrfs@vger.kernel.org
+Source: https://git.kernel.org/pub/scm/linux/kernel/git/kdave/btrfs-progs.git
+
+Files: *
+Copyright: 2007-2012 Oracle <http://www.oracle.com/>
+License: GPL-2
+
+Files: libbtrfsutil/*
+Copyright: 2007-2012 Oracle <http://www.oracle.com/>
+License: LGPL-2.1+
+
+Files: debian/*
+Copyright: 2007-2013 Daniel Baumann <daniel.baumann@progress-technologies.net>
+           2013 <luk@debian.org>
+           2013-2016 Dimitri John Ledkov <xnox@debian.org>, et al.
+License: GPL-2+
+
+License: GPL-2+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+ .
+ The complete text of the GNU General Public License
+ can be found in /usr/share/common-licenses/GPL-2 file.
+
+License: GPL-2
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License v2 as published by
+ the Free Software Foundation.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>.
+ .
+ The complete text of the GNU General Public License
+ can be found in /usr/share/common-licenses/GPL-2 file.
+
+License: LGPL-2.1+
+ See /usr/share/common-licenses/LGPL-2.1.

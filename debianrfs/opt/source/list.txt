@@ -1,0 +1,6 @@
+/opt/source/dtb-5.10-ti : https://git.beagleboard.org/beagleboard/BeagleBoard-DeviceTrees.git
+/opt/source/dtb-5.15 : https://github.com/beagleboard/BeagleBoard-DeviceTrees
+/opt/source/bbb-pin-utils : https://github.com/mvduin/bbb-pin-utils
+/opt/source/py-uio : https://github.com/mvduin/py-uio
+/opt/source/overlay-utils : https://github.com/mvduin/overlay-utils
+/opt/source/spidev-test : https://github.com/rm-hull/spidev-test

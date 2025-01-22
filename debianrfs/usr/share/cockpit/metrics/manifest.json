@@ -1,0 +1,11 @@
+{
+    "parent": {
+        "component": "system",
+        "docs": [
+            {
+                "label": "Performance Co-Pilot",
+                "url": "https://pcp.readthedocs.io/en/latest/"
+            }
+        ]
+    }
+}

@@ -1,0 +1,10 @@
+distro-1.8.0.dist-info/METADATA,sha256=361630f7850f5dbefcfd9dff56d2f14c9d734205142a84e7760d74b8a257f34d,6915
+distro-1.8.0.dist-info/RECORD,,
+distro-1.8.0.dist-info/WHEEL,sha256=1b5e87e00dc87a84269cead8578b9e6462928e18a95f1f3373c9eef451a5bcc0,92
+distro-1.8.0.dist-info/entry_points.txt,sha256=dce6e3a9031b875c5e410c2c5ad81b7c33433030fe11b8204753a3ff3f2cf617,46
+distro-1.8.0.dist-info/top_level.txt,sha256=8a475efd5fd711d481a9a19de6d12b88dff0cd81cb8135ffcd5b65b062c7bf04,7
+distro/__init__.py,sha256=d9f1e317e49f80fbe3c8d67588787fc23a96751fd8a393831f0642d232c13e17,981
+distro/__main__.py,sha256=6eef5ddd389fa0a72264572a441bb2815dc64ae4e19d50ff9b620ae1ccfde95b,64
+distro/distro.py,sha256=5193b52e3221b4508c7656e2cf7f608f7ada57e0267f7481c331b37c0a62307c,49330
+distro/py.typed,sha256=e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855,0
+scripts-3.10/distro,sha256=eba2ce40bd615a02bd0c01d3a645275116fd6825d2c1feb3c52cd6ab3dfdab5d,212

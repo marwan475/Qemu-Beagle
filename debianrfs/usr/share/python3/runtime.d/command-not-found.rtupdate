@@ -1,0 +1,7 @@
+#! /bin/sh
+set -e
+
+if [ "$1" = rtupdate ]; then
+	py3clean -p command-not-found /usr/share/command-not-found
+	py3compile -p command-not-found  /usr/share/command-not-found
+fi

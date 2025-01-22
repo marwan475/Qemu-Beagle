@@ -1,0 +1,13 @@
+b6271a9f4b28b61980166c7c0c11e5a5  usr/bin/linux-check-removal
+a714a0496b7bb12f6b9ceb19839f6654  usr/bin/linux-update-symlinks
+e21c8e49fcce2130ce64c1125d6ddf9d  usr/bin/linux-version
+e9f2aaa52327e42fda8da1c48df396c2  usr/share/doc/linux-base/changelog.gz
+e8b843ab3c4e56cef875e08e960dc22a  usr/share/doc/linux-base/copyright
+a51cee4cde08d2d1c7903cea2cd737e2  usr/share/lintian/overrides/linux-base
+0b8c0a6a9938eb91a80f310b412b5ff4  usr/share/man/de/man5/kernel-img.conf.5.gz
+ad49621885d24c1ac27b00c283f464e0  usr/share/man/fr/man5/kernel-img.conf.5.gz
+59794d07b8c7371f131849f53ef3db06  usr/share/man/man1/linux-check-removal.1.gz
+a92745ca53cd4d42b119ee9d96c8ad23  usr/share/man/man1/linux-update-symlinks.1.gz
+66622757c60f6fec51348d9beae1b9f6  usr/share/man/man1/linux-version.1.gz
+342ee8681c364bfa06f1a6be9547d2f1  usr/share/man/man5/kernel-img.conf.5.gz
+930b7f1cfbcabcd11e1dedd2ac90c0fc  usr/share/perl5/DebianLinux.pm

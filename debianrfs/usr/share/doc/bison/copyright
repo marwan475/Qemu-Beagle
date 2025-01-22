@@ -1,0 +1,20 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Bison
+Upstream-Contact: bug-bison@gnu.org
+Source: https://ftp.gnu.org/pub/gnu/bison/
+Files-Excluded: doc/figs doc/bison.info doc/bison.info.bak doc/bison.texi
+Comment: GFDL documentation with Front-Cover Texts and Back-Cover Texts.
+
+Files: *
+Copyright: 1984, 1986, 1987-2015 Free Software Foundation, Inc.
+License: GPL-3+
+ On Debian systems, the full text of the GNU General Public License
+ Version 3 can be found in the file
+ '/usr/share/common-licenses/GPL-3'.
+
+Files: debian/*
+Copyright: 2015 Chuan-kai Lin <cklin@debian.org>
+License: GPL-2+
+ On Debian systems, the full text of the GNU General Public License
+ Version 2 can be found in the file
+ '/usr/share/common-licenses/GPL-2'.

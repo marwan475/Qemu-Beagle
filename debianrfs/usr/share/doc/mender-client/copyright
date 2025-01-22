@@ -1,0 +1,22 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: mender
+Source: https://github.com/mendersoftware/mender
+Files-Excluded:
+  vendor
+  Godeps/_workspace
+
+Files: *
+Copyright: 2017-2019 Northern.tech AS
+License: Apache-2.0
+
+Files: debian/*
+Copyright: 2018-2019 Andreas Henriksson <andreas@fatal.se>
+License: Apache-2.0
+Comment: Debian packaging is licensed under the same terms as upstream
+
+License: Apache-2.0
+ All content in this project is licensed under the Apache License v2, unless
+ indicated otherwise.
+ .
+ On Debian systems, the complete text of the Apache License, Version 2
+ can be found in "/usr/share/common-licenses/Apache-2.0".

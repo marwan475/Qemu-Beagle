@@ -1,0 +1,258 @@
+#!/bin/sh
+
+set -e
+
+if [ -f /etc/default/generic-sys-mods ] ; then
+	. /etc/default/generic-sys-mods
+else
+	ROOT_DRIVE="/dev/mmcblk0"
+	ROOT_PARTITION="1"
+	ARCH_SOC_MODULES="generic"
+fi
+
+echo "#This file is sourced by bb-growpart" > /etc/default/generic-sys-mods
+echo "ROOT_DRIVE=${ROOT_DRIVE}" >> /etc/default/generic-sys-mods
+echo "ROOT_PARTITION=${ROOT_PARTITION}" >> /etc/default/generic-sys-mods
+echo "ARCH_SOC_MODULES=${ARCH_SOC_MODULES}" >> /etc/default/generic-sys-mods
+
+cp -vf /etc/bbb.io/templates/profile /etc/profile
+
+# Automatically added by dh_systemd_enable/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if deb-systemd-helper debian-installed 'regenerate_ssh_host_keys.service'; then
+		# The following line should be removed in trixie or trixie+1
+		deb-systemd-helper unmask 'regenerate_ssh_host_keys.service' >/dev/null || true
+
+		if deb-systemd-helper --quiet was-enabled 'regenerate_ssh_host_keys.service'; then
+			# Create new symlinks, if any.
+			deb-systemd-helper enable 'regenerate_ssh_host_keys.service' >/dev/null || true
+		fi
+	fi
+
+	# Update the statefile to add new symlinks (if any), which need to be cleaned
+	# up on purge. Also remove old symlinks.
+	deb-systemd-helper update-state 'regenerate_ssh_host_keys.service' >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_systemd_enable/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if deb-systemd-helper debian-installed 'grow_partition.service'; then
+		# The following line should be removed in trixie or trixie+1
+		deb-systemd-helper unmask 'grow_partition.service' >/dev/null || true
+
+		if deb-systemd-helper --quiet was-enabled 'grow_partition.service'; then
+			# Create new symlinks, if any.
+			deb-systemd-helper enable 'grow_partition.service' >/dev/null || true
+		fi
+	fi
+
+	# Update the statefile to add new symlinks (if any), which need to be cleaned
+	# up on purge. Also remove old symlinks.
+	deb-systemd-helper update-state 'grow_partition.service' >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_systemd_enable/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if deb-systemd-helper debian-installed 'regenerate_ssh_host_keys.service'; then
+		# The following line should be removed in trixie or trixie+1
+		deb-systemd-helper unmask 'regenerate_ssh_host_keys.service' >/dev/null || true
+
+		if deb-systemd-helper --quiet was-enabled 'regenerate_ssh_host_keys.service'; then
+			# Create new symlinks, if any.
+			deb-systemd-helper enable 'regenerate_ssh_host_keys.service' >/dev/null || true
+		fi
+	fi
+
+	# Update the statefile to add new symlinks (if any), which need to be cleaned
+	# up on purge. Also remove old symlinks.
+	deb-systemd-helper update-state 'regenerate_ssh_host_keys.service' >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_systemd_enable/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if deb-systemd-helper debian-installed 'grow_partition.service'; then
+		# The following line should be removed in trixie or trixie+1
+		deb-systemd-helper unmask 'grow_partition.service' >/dev/null || true
+
+		if deb-systemd-helper --quiet was-enabled 'grow_partition.service'; then
+			# Create new symlinks, if any.
+			deb-systemd-helper enable 'grow_partition.service' >/dev/null || true
+		fi
+	fi
+
+	# Update the statefile to add new symlinks (if any), which need to be cleaned
+	# up on purge. Also remove old symlinks.
+	deb-systemd-helper update-state 'grow_partition.service' >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_systemd_enable/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if deb-systemd-helper debian-installed 'regenerate_ssh_host_keys.service'; then
+		# The following line should be removed in trixie or trixie+1
+		deb-systemd-helper unmask 'regenerate_ssh_host_keys.service' >/dev/null || true
+
+		if deb-systemd-helper --quiet was-enabled 'regenerate_ssh_host_keys.service'; then
+			# Create new symlinks, if any.
+			deb-systemd-helper enable 'regenerate_ssh_host_keys.service' >/dev/null || true
+		fi
+	fi
+
+	# Update the statefile to add new symlinks (if any), which need to be cleaned
+	# up on purge. Also remove old symlinks.
+	deb-systemd-helper update-state 'regenerate_ssh_host_keys.service' >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_systemd_enable/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if deb-systemd-helper debian-installed 'resize_filesystem.service'; then
+		# The following line should be removed in trixie or trixie+1
+		deb-systemd-helper unmask 'resize_filesystem.service' >/dev/null || true
+
+		if deb-systemd-helper --quiet was-enabled 'resize_filesystem.service'; then
+			# Create new symlinks, if any.
+			deb-systemd-helper enable 'resize_filesystem.service' >/dev/null || true
+		fi
+	fi
+
+	# Update the statefile to add new symlinks (if any), which need to be cleaned
+	# up on purge. Also remove old symlinks.
+	deb-systemd-helper update-state 'resize_filesystem.service' >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_systemd_enable/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if deb-systemd-helper debian-installed 'bb_install_modules.service'; then
+		# The following line should be removed in trixie or trixie+1
+		deb-systemd-helper unmask 'bb_install_modules.service' >/dev/null || true
+
+		if deb-systemd-helper --quiet was-enabled 'bb_install_modules.service'; then
+			# Create new symlinks, if any.
+			deb-systemd-helper enable 'bb_install_modules.service' >/dev/null || true
+		fi
+	fi
+
+	# Update the statefile to add new symlinks (if any), which need to be cleaned
+	# up on purge. Also remove old symlinks.
+	deb-systemd-helper update-state 'bb_install_modules.service' >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_systemd_enable/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if deb-systemd-helper debian-installed 'grow_partition.service'; then
+		# The following line should be removed in trixie or trixie+1
+		deb-systemd-helper unmask 'grow_partition.service' >/dev/null || true
+
+		if deb-systemd-helper --quiet was-enabled 'grow_partition.service'; then
+			# Create new symlinks, if any.
+			deb-systemd-helper enable 'grow_partition.service' >/dev/null || true
+		fi
+	fi
+
+	# Update the statefile to add new symlinks (if any), which need to be cleaned
+	# up on purge. Also remove old symlinks.
+	deb-systemd-helper update-state 'grow_partition.service' >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_systemd_enable/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if deb-systemd-helper debian-installed 'regenerate_ssh_host_keys.service'; then
+		# The following line should be removed in trixie or trixie+1
+		deb-systemd-helper unmask 'regenerate_ssh_host_keys.service' >/dev/null || true
+
+		if deb-systemd-helper --quiet was-enabled 'regenerate_ssh_host_keys.service'; then
+			# Create new symlinks, if any.
+			deb-systemd-helper enable 'regenerate_ssh_host_keys.service' >/dev/null || true
+		fi
+	fi
+
+	# Update the statefile to add new symlinks (if any), which need to be cleaned
+	# up on purge. Also remove old symlinks.
+	deb-systemd-helper update-state 'regenerate_ssh_host_keys.service' >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_systemd_enable/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if deb-systemd-helper debian-installed 'resize_filesystem.service'; then
+		# The following line should be removed in trixie or trixie+1
+		deb-systemd-helper unmask 'resize_filesystem.service' >/dev/null || true
+
+		if deb-systemd-helper --quiet was-enabled 'resize_filesystem.service'; then
+			# Create new symlinks, if any.
+			deb-systemd-helper enable 'resize_filesystem.service' >/dev/null || true
+		fi
+	fi
+
+	# Update the statefile to add new symlinks (if any), which need to be cleaned
+	# up on purge. Also remove old symlinks.
+	deb-systemd-helper update-state 'resize_filesystem.service' >/dev/null || true
+fi
+# End automatically added section
+# Automatically added by dh_systemd_start/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -z "${DPKG_ROOT:-}" ] && [ -d /run/systemd/system ]; then
+		systemctl --system daemon-reload >/dev/null || true
+		if [ -n "$2" ]; then
+			deb-systemd-invoke try-restart 'bb_install_modules.service' 'grow_partition.service' 'regenerate_ssh_host_keys.service' 'resize_filesystem.service' >/dev/null || true
+		fi
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_systemd_start/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -z "${DPKG_ROOT:-}" ] && [ -d /run/systemd/system ]; then
+		systemctl --system daemon-reload >/dev/null || true
+		if [ -n "$2" ]; then
+			deb-systemd-invoke try-restart 'bb_install_modules.service' 'grow_partition.service' 'regenerate_ssh_host_keys.service' 'resize_filesystem.service' >/dev/null || true
+		fi
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_systemd_start/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -z "${DPKG_ROOT:-}" ] && [ -d /run/systemd/system ]; then
+		systemctl --system daemon-reload >/dev/null || true
+		if [ -n "$2" ]; then
+			deb-systemd-invoke try-restart 'bb_install_modules.service' 'grow_partition.service' 'regenerate_ssh_host_keys.service' 'resize_filesystem.service' >/dev/null || true
+		fi
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_systemd_start/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -z "${DPKG_ROOT:-}" ] && [ -d /run/systemd/system ]; then
+		systemctl --system daemon-reload >/dev/null || true
+		if [ -n "$2" ]; then
+			deb-systemd-invoke try-restart 'bb_install_modules.service' 'grow_partition.service' 'regenerate_ssh_host_keys.service' 'resize_filesystem.service' >/dev/null || true
+		fi
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installinit/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -x "/etc/init.d/regenerate_ssh_host_keys" ]; then
+		update-rc.d regenerate_ssh_host_keys defaults >/dev/null || exit 1
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installinit/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -x "/etc/init.d/grow_partition" ]; then
+		update-rc.d grow_partition defaults >/dev/null || exit 1
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installinit/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -x "/etc/init.d/resize_filesystem" ]; then
+		update-rc.d resize_filesystem defaults >/dev/null || exit 1
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installinit/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -x "/etc/init.d/bb_install_modules" ]; then
+		update-rc.d bb_install_modules defaults >/dev/null || exit 1
+	fi
+fi
+# End automatically added section
+

@@ -1,0 +1,17 @@
+82722695cb4c76503fa27791c9a0da68  usr/share/doc/libinline-files-perl/changelog.Debian.gz
+2dabaf9b43f2fee73771cccd7ba5c2e7  usr/share/doc/libinline-files-perl/changelog.gz
+9d6ca660791b7c67b8181bf0db582e12  usr/share/doc/libinline-files-perl/copyright
+cf6fbb3a264444ec141f34844b4ef1bf  usr/share/doc/libinline-files-perl/examples/XML.xml
+c3bdc0e5dcdb033919e73e0f9f48fb75  usr/share/doc/libinline-files-perl/examples/demo_XML
+4ad522dd3154346ea1311804ac361148  usr/share/doc/libinline-files-perl/examples/demo_multiple.pl
+404f7b127a195fb9f167d8ba2549fbc6  usr/share/doc/libinline-files-perl/examples/demo_nowrite.pl
+eba0cd07e9d734afe5a90f4373604ff4  usr/share/doc/libinline-files-perl/examples/demo_persistence.pl
+83b22e29570f5fe3cd9617d44ff823d5  usr/share/doc/libinline-files-perl/examples/demo_persistence_simple.pl
+d81d92f37e9f57e319fafe4c36257cb2  usr/share/doc/libinline-files-perl/examples/demo_simple.pl
+499df9ccf860bda2a7c2bcb377b39a3f  usr/share/doc/libinline-files-perl/examples/demo_singles.pl
+f583437cc64c58f2871d19b7688324c0  usr/share/doc/libinline-files-perl/examples/demo_virtual.pl
+cbf7adbfec6123e3d16a00ba377479d0  usr/share/doc/libinline-files-perl/examples/demo_write.pl
+c4b0831efd319f9e7db67a45a1b8bc6a  usr/share/man/man3/Inline::Files.3pm.gz
+7a1ac1ac4bcb74ab2360d7300ab105e5  usr/share/man/man3/Inline::Files::Virtual.3pm.gz
+6731c9732ab12e381f1663a8e61f0ada  usr/share/perl5/Inline/Files.pm
+953767618a5b8fd23ee50c3cbda3213e  usr/share/perl5/Inline/Files/Virtual.pm

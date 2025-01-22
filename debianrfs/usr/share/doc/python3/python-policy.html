@@ -1,0 +1,961 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Debian Python Policy 0.12.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="copyright" title="Copyright" href="#" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="nav-item nav-item-0"><a href="#">Debian Python Policy 0.12.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Debian Python Policy 0.12.0.0 documentation</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="abstract">
+<h1>Abstract<a class="headerlink" href="#abstract" title="Permalink to this heading">¶</a></h1>
+<p>This document describes the packaging of Python within the Debian
+GNU/Linux distribution and the policy requirements for packaged Python
+programs and modules.</p>
+</section>
+<section id="contents">
+<h1>Contents<a class="headerlink" href="#contents" title="Permalink to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<span id="document-copyright"></span><section id="copyright">
+<h2><span class="section-number">1. </span>Copyright<a class="headerlink" href="#copyright" title="Permalink to this heading">¶</a></h2>
+<p>1999-2021, Software in the Public Interest</p>
+<dl class="simple">
+<dt>Authors:</dt><dd><ul class="simple">
+<li><p>Neil Schemenauer &lt;<a class="reference external" href="mailto:nas&#37;&#52;&#48;debian&#46;org">nas<span>&#64;</span>debian<span>&#46;</span>org</a>&gt;</p></li>
+<li><p>Matthias Klose &lt;<a class="reference external" href="mailto:doko&#37;&#52;&#48;debian&#46;org">doko<span>&#64;</span>debian<span>&#46;</span>org</a>&gt;</p></li>
+<li><p>Gregor Hoffleit &lt;<a class="reference external" href="mailto:flight&#37;&#52;&#48;debian&#46;org">flight<span>&#64;</span>debian<span>&#46;</span>org</a>&gt;</p></li>
+<li><p>Josselin Mouette &lt;<a class="reference external" href="mailto:joss&#37;&#52;&#48;debian&#46;org">joss<span>&#64;</span>debian<span>&#46;</span>org</a>&gt;</p></li>
+<li><p>Joe Wreschnig &lt;<a class="reference external" href="mailto:piman&#37;&#52;&#48;debian&#46;org">piman<span>&#64;</span>debian<span>&#46;</span>org</a>&gt;</p></li>
+<li><p>Loïc Minier &lt;<a class="reference external" href="mailto:lool&#37;&#52;&#48;debian&#46;org">lool<span>&#64;</span>debian<span>&#46;</span>org</a>&gt;</p></li>
+<li><p>Scott Kitterman &lt;<a class="reference external" href="mailto:scott&#37;&#52;&#48;kitterman&#46;com">scott<span>&#64;</span>kitterman<span>&#46;</span>com</a>&gt;</p></li>
+<li><p>Barry Warsaw &lt;<a class="reference external" href="mailto:barry&#37;&#52;&#48;debian&#46;org">barry<span>&#64;</span>debian<span>&#46;</span>org</a>&gt;</p></li>
+<li><p>Ben Finney &lt;<a class="reference external" href="mailto:ben+debian&#37;&#52;&#48;benfinney&#46;id&#46;au">ben+debian<span>&#64;</span>benfinney<span>&#46;</span>id<span>&#46;</span>au</a>&gt;</p></li>
+<li><p>Neil Williams &lt;<a class="reference external" href="mailto:codehelp&#37;&#52;&#48;debian&#46;org">codehelp<span>&#64;</span>debian<span>&#46;</span>org</a>&gt;</p></li>
+<li><p>Stefano Rivera &lt;<a class="reference external" href="mailto:stefanor&#37;&#52;&#48;debian&#46;org">stefanor<span>&#64;</span>debian<span>&#46;</span>org</a>&gt;</p></li>
+</ul>
+</dd>
+</dl>
+<p>This manual is free software; you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published by the
+Free Software Foundation; either version 2 of the License, or (at your
+option) any later version.</p>
+<p>This is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or
+FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.</p>
+<p>A copy of the GNU General Public License version 2 is available as
+<code class="file docutils literal notranslate"><span class="pre">/usr/share/common-licences/GPL-2</span></code> in the Debian GNU/Linux system,
+or on the World Wide Web at <a class="reference external" href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU General Public License, version 2</a>.</p>
+<p>You can also obtain it by writing to the Free Software Foundation, Inc.,
+51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.</p>
+</section>
+<span id="document-python3"></span><section id="completing-the-move-to-python-3">
+<h2><span class="section-number">2. </span>Completing the move to Python 3<a class="headerlink" href="#completing-the-move-to-python-3" title="Permalink to this heading">¶</a></h2>
+<p>Debian has previously supported two Python stacks, one for Python 3 and
+one for Python 2.
+The goal for Debian is to reduce this to one stack, dropping the Python
+2 stack and interpreter for the Bullseye release.</p>
+<p><span class="target" id="index-0"></span><a class="pep reference external" href="https://peps.python.org/pep-0404/"><strong>PEP 404</strong></a> states that no more major Python 2 releases are planned,
+although the latest released minor version 2.7 will see some extended
+support, documented in <span class="target" id="index-1"></span><a class="pep reference external" href="https://peps.python.org/pep-0466/"><strong>PEP 466</strong></a>.</p>
+<p>Packages in Debian should use Python 3.
+New packages must use Python 3 from the initial upload, new upstream
+versions for existing packages must use Python 3.
+If Python 2 is still supported in Bullseye, selected packages may
+continue using Python 2 until Python 3 support is available for those
+packages.
+Please discuss all use of Python 2 on the debian-python mailing list
+before uploading.</p>
+<ol class="arabic simple">
+<li><p>Applications should use Python 3 and must not be packaged for Python
+2 as well.
+If an application supports only Python 2, the application may need
+to be removed from Debian so that it does not block removal of other
+Python 2 packages.</p></li>
+<li><p>Python libraries need to support Python 3 and new versions must be
+packaged for Python 3.
+Existing Python 2 libraries must not be dropped before the last
+reverse dependency is removed.
+New Python 2 libraries must not be introduced.</p></li>
+<li><p>Python 3 should be used for the packaging if the packaging scripts
+use Python.</p></li>
+</ol>
+<section id="removal-of-the-unversioned-packages">
+<h3><span class="section-number">2.1. </span>Removal of the unversioned packages<a class="headerlink" href="#removal-of-the-unversioned-packages" title="Permalink to this heading">¶</a></h3>
+<p>Starting with the Debian 11 release (bullseye), the binary packages
+<code class="docutils literal notranslate"><span class="pre">python</span></code>, <code class="docutils literal notranslate"><span class="pre">python-minimal</span></code>, <code class="docutils literal notranslate"><span class="pre">python-dev</span></code>, <code class="docutils literal notranslate"><span class="pre">python-dbg</span></code> and
+<code class="docutils literal notranslate"><span class="pre">python-doc</span></code> are removed.  No package in the archive must use any of
+these packages as build dependencies, dependencies, recommendations or
+suggestions.</p>
+</section>
+<section id="unversioned-python-commands">
+<h3><span class="section-number">2.2. </span>Unversioned python commands<a class="headerlink" href="#unversioned-python-commands" title="Permalink to this heading">¶</a></h3>
+<p>For the Debian 11 release (bullseye), the <code class="file docutils literal notranslate"><span class="pre">/usr/bin/python</span></code>
+command is provided in the <code class="docutils literal notranslate"><span class="pre">python-is-python2</span></code> package (pointing to
+<code class="file docutils literal notranslate"><span class="pre">/usr/bin/python2</span></code>).  The <code class="file docutils literal notranslate"><span class="pre">/usr/bin/python-config</span></code> and
+<code class="file docutils literal notranslate"><span class="pre">/usr/bin/pydoc</span></code> commands are provided in the
+<code class="docutils literal notranslate"><span class="pre">python-dev-is-python2</span></code> package.  These package are not installed by
+default for new installations, but only for upgrades from the Debian
+10 release (buster).  These packages should be removed after an
+upgrade.  These packages will not be part of the Debian 12 release
+(bookworm).</p>
+<p>The packages <code class="docutils literal notranslate"><span class="pre">python-is-python3</span></code> and <code class="docutils literal notranslate"><span class="pre">python-dev-is-python3</span></code>
+provide the <code class="file docutils literal notranslate"><span class="pre">/usr/bin/python</span></code>, <code class="file docutils literal notranslate"><span class="pre">/usr/bin/python-config</span></code>
+and <code class="file docutils literal notranslate"><span class="pre">/usr/bin/pydoc</span></code> commands pointing to Python3.  These
+packages can be installed by developers and users to use the
+unversioned commands.  NOTE: Locally installed software not yet ported
+to Python3 is likely to break when installing these packages.</p>
+<p>The packages <code class="docutils literal notranslate"><span class="pre">python-is-python3</span></code>, <code class="docutils literal notranslate"><span class="pre">python-dev-is-python3</span></code>,
+<code class="docutils literal notranslate"><span class="pre">python-is-python2</span></code> and <code class="docutils literal notranslate"><span class="pre">python-dev-is-python2</span></code> must not be used
+as build dependencies, dependencies, recommendations or suggestions.</p>
+</section>
+</section>
+<span id="document-interpreter"></span><section id="python-packaging">
+<h2><span class="section-number">3. </span>Python Packaging<a class="headerlink" href="#python-packaging" title="Permalink to this heading">¶</a></h2>
+<section id="versions">
+<h3><span class="section-number">3.1. </span>Versions<a class="headerlink" href="#versions" title="Permalink to this heading">¶</a></h3>
+<p>At any given time, the binary package <code class="docutils literal notranslate"><span class="pre">python3</span></code> will represent the
+current default Debian Python 3 version; the binary package <code class="docutils literal notranslate"><span class="pre">python</span></code>
+will represent the current default Debian Python 2 version, for as long
+as it exists.
+As far as is reasonable, Python 3 and Python 2 should be treated as
+separate runtime systems with minimal interdependencies.</p>
+<p>In some cases, Python policy explicitly references Python helper tools.
+For Debian Stretch, the <code class="docutils literal notranslate"><span class="pre">dh-python</span></code> package provides the only such
+tools; earlier helpers have been removed from Debian.</p>
+<p>It is a design goal to fully specify required interfaces and functions
+in policy for Python 3 and to avoid enshrining specific implementation
+details in policy.
+Except as noted, policy for Python 2 is the same as Python 3 with the
+exception of the different major version number as needed to distinguish
+them.</p>
+<p>The default Debian Python version, for each of Python 3 and Python 2,
+should always be the latest stable upstream version that can be fully
+integrated in Debian.</p>
+<p>There may be newer supported or unsupported versions included in Debian
+if they are not fully integrated for a particular release.</p>
+<p>Apart from the default version, legacy versions of Python or beta
+releases of future upstream versions may be included as well in Debian,
+as long as they are needed by other packages, or as long as it seems
+reasonable to provide them.</p>
+<p>Note: For the scope of this document, a Python version is synonymous
+with all micro versions within that minor version.
+e.g. Python 3.5.0 and 3.5.1 are micro versions of the same Python
+version 3.5, but Python 3.4 and 3.5 are indeed different versions.</p>
+<p>For any version, the main binary package must be called
+<code class="samp docutils literal notranslate"><span class="pre">python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em></code>.</p>
+<p>The set of currently supported Python 3 versions can be found in
+<code class="file docutils literal notranslate"><span class="pre">/usr/share/python3/debian_defaults</span></code>; the supported interface to
+this information is through <code class="file docutils literal notranslate"><span class="pre">/usr/bin/py3versions</span></code>.
+The set of currently supported Python 2 versions can be found in
+<code class="file docutils literal notranslate"><span class="pre">/usr/share/python/debian_defaults</span></code>; the supported interface to
+this information is <code class="file docutils literal notranslate"><span class="pre">/usr/bin/pyversions</span></code>.</p>
+<p>These files are in Python <code class="docutils literal notranslate"><span class="pre">configparser</span></code> format.
+They define (in the <code class="docutils literal notranslate"><span class="pre">DEFAULT</span></code> section) the following options:</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">default-version</span></code></dt><dd><p>The name of the interpreter for the current default Debian Python.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">supported-versions</span></code></dt><dd><p>The set of interpreter names currently supported and for which
+modules should be built and byte-compiled.
+This includes <code class="docutils literal notranslate"><span class="pre">default-version</span></code>.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">old-versions</span></code></dt><dd><p>The set of interpreter names which might still be on the system but
+for which modules should not be built.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">unsupported-versions</span></code></dt><dd><p>The set of interpreter names which should not be supported at all,
+that is modules should not be built or byte-compiled for these.
+This includes (is a superset of) <code class="docutils literal notranslate"><span class="pre">old-versions</span></code>.</p>
+</dd>
+</dl>
+<p>Newer versions might also appear in <code class="docutils literal notranslate"><span class="pre">unsupported-versions</span></code> before
+being moved to <code class="docutils literal notranslate"><span class="pre">supported-versions</span></code>.</p>
+</section>
+<section id="main-packages">
+<span id="id1"></span><h3><span class="section-number">3.2. </span>Main packages<a class="headerlink" href="#main-packages" title="Permalink to this heading">¶</a></h3>
+<p>For every Python version provided in Debian, the binary package
+<code class="samp docutils literal notranslate"><span class="pre">python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em></code> shall provide a complete distribution for
+<em>deployment</em> of Python scripts and applications.
+The package must ensure that the binary <code class="file docutils literal notranslate"><span class="pre">/usr/bin/python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em></code>
+is provided.</p>
+<p>Installation of <code class="samp docutils literal notranslate"><span class="pre">python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em></code> shall provide the modules of the
+upstream Python distribution with some exceptions.</p>
+<p>Excluded are modules that cannot be included for licensing reasons, for
+dependency tracking purposes (for example the GPL-licensed <code class="docutils literal notranslate"><span class="pre">gdbm</span></code>
+module), or that should not be included for packaging reasons (for
+example the <code class="docutils literal notranslate"><span class="pre">tk</span></code> module which depends on Xorg and the <code class="docutils literal notranslate"><span class="pre">venv</span></code> module
+which depends on wheels to bootstrap pip).
+Modules that would interfere with system package management (for example
+<code class="docutils literal notranslate"><span class="pre">ensurepip</span></code>, when used outside virtual environments) are modified to
+print a message explaining the problem and recommending alternatives.</p>
+<p>Excluded are modules that cannot be included for licensing reasons (for
+example the <code class="docutils literal notranslate"><span class="pre">profile</span></code> module), for dependency tracking purposes (for
+example the GPL-licensed <code class="docutils literal notranslate"><span class="pre">gdbm</span></code> module), or that should not be
+included for packaging reasons (for example the <code class="docutils literal notranslate"><span class="pre">tk</span></code> module which
+depends on Xorg).</p>
+<p>Some tools and files for the <em>development</em> of Python modules are split
+off in a separate binary package <code class="samp docutils literal notranslate"><span class="pre">python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em><span class="pre">-dev</span></code>.</p>
+<p>Modules only used for <em>building</em> of Python modules (e.g. <code class="docutils literal notranslate"><span class="pre">distutils</span></code>
+and <code class="docutils literal notranslate"><span class="pre">lib2to3</span></code>) are split into separate packages.
+The <code class="docutils literal notranslate"><span class="pre">python3-venv</span></code> binary package depends on these.</p>
+<p>Documentation will be provided separately as well.</p>
+<p>At any time, the <code class="docutils literal notranslate"><span class="pre">python3</span></code> binary package must ensure that
+<code class="file docutils literal notranslate"><span class="pre">/usr/bin/python3</span></code> is provided, as a symlink to the current
+<code class="samp docutils literal notranslate"><span class="pre">python3.</span><em><span class="pre">Y</span></em></code> executable.
+The package must depend on the <code class="samp docutils literal notranslate"><span class="pre">python3.</span><em><span class="pre">Y</span></em></code> package that installs
+the executable.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">python3-full</span></code> binary package must ensure that the entire Python
+standard library is available, including all modules split into separate
+packages (but excluding modules excluded from Debian for licensing
+reasons).
+This package exists for the convenience of python developers, and must
+not be used in dependencies, recommendations and build dependencies by
+python module or application packages.</p>
+<p>The version of the <code class="docutils literal notranslate"><span class="pre">python3</span></code> package must be greater than or equal to
+<code class="samp docutils literal notranslate"><span class="pre">3.</span><em><span class="pre">Y</span></em></code> and lower than <code class="samp docutils literal notranslate"><span class="pre">3.</span><em><span class="pre">Y+1</span></em></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">python</span></code> and <code class="docutils literal notranslate"><span class="pre">python-dbg</span></code> binary packages are to be removed for
+Bullseye.
+If any Python 2 packages remain in Bullseye, these must depend on
+<code class="docutils literal notranslate"><span class="pre">python2</span></code> or <code class="docutils literal notranslate"><span class="pre">python2-dbg</span></code>.
+The <code class="docutils literal notranslate"><span class="pre">python2</span></code> package must depend on the <code class="samp docutils literal notranslate"><span class="pre">python2.</span><em><span class="pre">Y</span></em></code> package
+that installs the executable <code class="file docutils literal notranslate"><span class="pre">/usr/bin/python2</span></code>.
+The version of the <code class="docutils literal notranslate"><span class="pre">python2</span></code> package must be greater than or equal to
+<code class="samp docutils literal notranslate"><span class="pre">2.</span><em><span class="pre">Y</span></em></code> and lower than <code class="samp docutils literal notranslate"><span class="pre">2.</span><em><span class="pre">Y+1</span></em></code>.
+The <code class="docutils literal notranslate"><span class="pre">python2</span></code> must not provide <code class="file docutils literal notranslate"><span class="pre">/usr/bin/python</span></code>.</p>
+<p>For as long as it remains supported, the <code class="docutils literal notranslate"><span class="pre">python</span></code> binary package must
+ensure that <code class="file docutils literal notranslate"><span class="pre">/usr/bin/python2</span></code> is provided, as a symlink to the
+current <code class="samp docutils literal notranslate"><span class="pre">python2.</span><em><span class="pre">Y</span></em></code> executable.
+The package must depend on the <code class="samp docutils literal notranslate"><span class="pre">python2.</span><em><span class="pre">Y</span></em></code> package that installs
+the executable.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">python</span></code> binary package must also ensure that
+<code class="file docutils literal notranslate"><span class="pre">/usr/bin/python</span></code> is provided, as a symlink to the current
+<code class="samp docutils literal notranslate"><span class="pre">python2.</span><em><span class="pre">Y</span></em></code> executable.
+See <span class="target" id="index-0"></span><a class="pep reference external" href="https://peps.python.org/pep-0394/"><strong>PEP 394</strong></a> for details.</p>
+<p>The version of the <code class="docutils literal notranslate"><span class="pre">python</span></code> package must be greater than or equal to
+<code class="samp docutils literal notranslate"><span class="pre">2.</span><em><span class="pre">Y</span></em></code> and lower than <code class="samp docutils literal notranslate"><span class="pre">2.</span><em><span class="pre">Y+1</span></em></code>.</p>
+</section>
+<section id="virtual-packages-for-python-version-specific-dependencies">
+<h3><span class="section-number">3.3. </span>Virtual packages for Python-version specific dependencies<a class="headerlink" href="#virtual-packages-for-python-version-specific-dependencies" title="Permalink to this heading">¶</a></h3>
+<p>The <cite>python3</cite> package provides <cite>python3-supported-min (= {X}.{Y})</cite> and
+<cite>python3-supported-max (= {X}.{Y})</cite> virtual packages.
+This allows packages to declare dependencies of the form
+<code class="samp docutils literal notranslate"><span class="pre">python3-foo</span> <span class="pre">|</span> <span class="pre">python3-supported-min</span> <span class="pre">(&gt;=</span> <span class="pre">3.7)</span></code> or
+<code class="samp docutils literal notranslate"><span class="pre">python3-foo</span> <span class="pre">|</span> <span class="pre">python3-supported-max</span> <span class="pre">(&lt;=</span> <span class="pre">3.7)</span></code>, which would
+install <cite>python3-foo</cite> if any supported <cite>python3</cite> version requires it.</p>
+</section>
+<section id="minimal-packages">
+<h3><span class="section-number">3.4. </span>Minimal packages<a class="headerlink" href="#minimal-packages" title="Permalink to this heading">¶</a></h3>
+<p>For every Python version provided in Debian, the binary package
+<code class="samp docutils literal notranslate"><span class="pre">python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em><span class="pre">-minimal</span></code> might exist and should not be depended
+upon by other packages except the Python runtime packages themselves.</p>
+</section>
+<section id="python-interpreter">
+<h3><span class="section-number">3.5. </span>Python Interpreter<a class="headerlink" href="#python-interpreter" title="Permalink to this heading">¶</a></h3>
+<section id="interpreter-name">
+<span id="id2"></span><h4><span class="section-number">3.5.1. </span>Interpreter Name<a class="headerlink" href="#interpreter-name" title="Permalink to this heading">¶</a></h4>
+<p>The different Python major versions require different interpreters
+(see <a class="reference internal" href="#main-packages"><span class="std std-ref">Main packages</span></a>).</p>
+<p>Python scripts that require the default Python 3 version should specify
+<code class="docutils literal notranslate"><span class="pre">python3</span></code> as the interpreter name.</p>
+<p>Python scripts that require the default Python 2 version should specify
+<code class="docutils literal notranslate"><span class="pre">python2</span></code> as the interpreter name for as long as this remains supported.</p>
+<p>Python scripts should not specify <code class="docutils literal notranslate"><span class="pre">python</span></code> as the interpreter name
+even if they do not require any particular version of Python as the
+script would stop working upon removal of the Python 2 stack.</p>
+<p>Python scripts that only work with a specific Python minor version must
+explicitly use the versioned interpreter name (<code class="samp docutils literal notranslate"><span class="pre">python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em></code>).</p>
+</section>
+<section id="interpreter-location">
+<span id="id3"></span><h4><span class="section-number">3.5.2. </span>Interpreter Location<a class="headerlink" href="#interpreter-location" title="Permalink to this heading">¶</a></h4>
+<p>Python scripts should specify the Debian Python interpreter, to ensure
+that the Debian Python installation is used and all dependencies on
+additional Python modules are met.</p>
+<p>The preferred specification for the Python 3 interpreter is
+<code class="file docutils literal notranslate"><span class="pre">/usr/bin/python3</span></code> (or <code class="file docutils literal notranslate"><span class="pre">/usr/bin/python3.</span><em><span class="pre">Y</span></em></code> if it requires
+Python <code class="samp docutils literal notranslate"><span class="pre">3.</span><em><span class="pre">Y</span></em></code>).</p>
+<p>The preferred specification for the Python 2 interpreter is
+<code class="file docutils literal notranslate"><span class="pre">/usr/bin/python2</span></code> (or <code class="file docutils literal notranslate"><span class="pre">/usr/bin/python2.</span><em><span class="pre">Y</span></em></code> if it requires
+Python <code class="samp docutils literal notranslate"><span class="pre">2.</span><em><span class="pre">Y</span></em></code>).</p>
+<p>Scripts requiring the default Python 2 version must not specify the
+interpreter <code class="file docutils literal notranslate"><span class="pre">/usr/bin/python</span></code> as such scripts will fail when the
+unversioned interpreter binary <code class="file docutils literal notranslate"><span class="pre">/usr/bin/python</span></code> is removed.</p>
+<p>Maintainers should not override the Debian Python interpreter using
+<code class="samp docutils literal notranslate"><span class="pre">/usr/bin/env</span> <em><span class="pre">name</span></em></code>.
+This is not advisable as it bypasses Debian’s dependency checking and
+makes the package vulnerable to incomplete local installations of
+Python.</p>
+</section>
+</section>
+<section id="module-path">
+<span id="id4"></span><h3><span class="section-number">3.6. </span>Module Path<a class="headerlink" href="#module-path" title="Permalink to this heading">¶</a></h3>
+<p>By default, Python modules are searched in the directories listed in the
+<span class="target" id="index-1"></span><code class="xref std std-envvar docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> environment variable and in the <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> Python
+variable.
+For all supported Debian releases, <code class="docutils literal notranslate"><span class="pre">sys.path</span></code> does not include a
+<code class="file docutils literal notranslate"><span class="pre">/usr/lib/python</span><em><span class="pre">X</span></em><em><span class="pre">Y</span></em><span class="pre">.zip</span></code> entry.</p>
+<p>Directories with private Python modules must be absent from the <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>.</p>
+<p>Public Python 3 modules must be installed in the system Python 3 modules
+directory, <code class="file docutils literal notranslate"><span class="pre">/usr/lib/python3/dist-packages</span></code>.</p>
+<p>Public Python 2 modules must be installed in the system Python 2 modules
+directory <code class="file docutils literal notranslate"><span class="pre">/usr/lib/python2.</span><em><span class="pre">Y</span></em><span class="pre">/dist-packages</span></code>, where
+<code class="samp docutils literal notranslate"><span class="pre">2.</span><em><span class="pre">Y</span></em></code> is the Python 2 version.</p>
+<p>A special directory is dedicated to public Python modules installed by
+the local administrator, <code class="file docutils literal notranslate"><span class="pre">/usr/local/lib/python3/dist-packages</span></code>
+for all Python 3 versions,
+<code class="file docutils literal notranslate"><span class="pre">/usr/local/lib/python2.</span><em><span class="pre">Y</span></em><span class="pre">/dist-packages</span></code> for Python 2.</p>
+<p>For local installation of Python modules by the system administrator,
+special directories are reserved.
+The directory <code class="file docutils literal notranslate"><span class="pre">/usr/local/lib/python3/site-packages</span></code> is in the
+Python 3 runtime module search path.
+The directory <code class="file docutils literal notranslate"><span class="pre">/usr/local/lib/python2.</span><em><span class="pre">Y</span></em><span class="pre">/site-packages</span></code> is in the
+Python <code class="samp docutils literal notranslate"><span class="pre">2.</span><em><span class="pre">Y</span></em></code> runtime module search path.</p>
+<p>Additional information on appending site-specific paths to the module
+search path is available in the official documentation of the <code class="docutils literal notranslate"><span class="pre">site</span></code>
+module.</p>
+<p>Python modules which work with multiple supported Python 2 versions must
+install to version-specific locations, for instance
+<code class="file docutils literal notranslate"><span class="pre">/usr/lib/python2.6/dist-packages/foo.py</span></code> and
+<code class="file docutils literal notranslate"><span class="pre">/usr/lib/python2.7/dist-packages/foo.py</span></code>.
+These should point to a common file.</p>
+<p>Architecture-independent public Python 3 modules must be installed to
+<code class="file docutils literal notranslate"><span class="pre">/usr/lib/python3/dist-packages</span></code>.</p>
+<p>Architecture-independent public Python 2 modules should be installed to
+<code class="file docutils literal notranslate"><span class="pre">/usr/lib/python2.7/dist-packages</span></code>.
+The historical location for this was <code class="file docutils literal notranslate"><span class="pre">/usr/share/pyshared</span></code>.
+Since Python 2.7 is the last Python 2 version and the only supported
+version in Wheezy and later releases, a version-specific location is
+sufficient.</p>
+</section>
+<section id="hooks-for-updates-to-installed-runtimes">
+<h3><span class="section-number">3.7. </span>Hooks for updates to installed runtimes<a class="headerlink" href="#hooks-for-updates-to-installed-runtimes" title="Permalink to this heading">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">python3</span></code> binary package has special hooks to allow other packages
+to act upon updates to the installed runtimes.</p>
+<p>This mechanism is required to handle changes of the default Python
+runtime in some packages and to enable the Python packaging helpers.</p>
+<p>There are three supported hook types which come in the form of scripts
+which are invoked from the maintainer scripts of the Python runtime
+packages when specific installations, removals, or upgrades occur.</p>
+<ol class="arabic simple">
+<li><p><code class="file docutils literal notranslate"><span class="pre">/usr/share/python3/runtime.d/</span><em><span class="pre">*</span></em><span class="pre">.rtinstall</span></code>:
+These are called when a runtime is installed or becomes supported.
+The first argument is <code class="docutils literal notranslate"><span class="pre">rtinstall</span></code>, the second argument is the
+affected runtime (for example <code class="samp docutils literal notranslate"><span class="pre">python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em></code>) and the third
+and fourth argument are the old and new version of this packaged
+runtime if this runtime was already installed but unsupported.</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">/usr/share/python3/runtime.d/</span><em><span class="pre">*</span></em><span class="pre">.rtremove</span></code>:
+These are called when a runtime is removed or stops being supported.
+The first argument is <code class="docutils literal notranslate"><span class="pre">rtremove</span></code>, and the second argument is the
+affected runtime (for example <code class="samp docutils literal notranslate"><span class="pre">python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em></code>).</p></li>
+<li><p><code class="file docutils literal notranslate"><span class="pre">/usr/share/python3/runtime.d/</span><em><span class="pre">*</span></em><span class="pre">.rtupdate</span></code>:
+These are called when the default runtime changes.
+The first argument is either <code class="docutils literal notranslate"><span class="pre">pre-rtupdate</span></code>, called before changing
+the default runtime, or <code class="docutils literal notranslate"><span class="pre">rtupdate</span></code>, called when changing the
+default runtime, or <code class="docutils literal notranslate"><span class="pre">post-rtupdate</span></code>, called immediately afterwards.
+The second argument is the old default runtime (for example
+<code class="samp docutils literal notranslate"><span class="pre">python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em></code>), and the third argument is the new default
+runtime (for example <code class="samp docutils literal notranslate"><span class="pre">python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Z</span></em></code>).</p></li>
+</ol>
+</section>
+<section id="documentation">
+<h3><span class="section-number">3.8. </span>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">¶</a></h3>
+<p>Python documentation is split out in separate binary packages
+<code class="samp docutils literal notranslate"><span class="pre">python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em><span class="pre">-doc</span></code>.</p>
+<p>The binary package <code class="docutils literal notranslate"><span class="pre">python3-doc</span></code> will always provide the documentation
+for the default Debian Python 3 version.
+The binary package <code class="docutils literal notranslate"><span class="pre">python2-doc</span></code> will always provide the documentation
+for the default Debian Python 2 version, for as long as that remains
+supported.</p>
+<p>TODO: Policy for documentation of third party packages.</p>
+</section>
+</section>
+<span id="document-packaged-modules"></span><section id="packaged-modules">
+<h2><span class="section-number">4. </span>Packaged Modules<a class="headerlink" href="#packaged-modules" title="Permalink to this heading">¶</a></h2>
+<p>The goal of these policies is to reduce the work necessary for Python
+transitions.
+Python modules are internally very dependent on a specific Python
+version.
+However, we want to automate recompiling modules when possible, either
+during the upgrade itself (re-compiling bytecode files <code class="file docutils literal notranslate"><em><span class="pre">*</span></em><span class="pre">.pyc</span></code>
+and <code class="file docutils literal notranslate"><em><span class="pre">*</span></em><span class="pre">.pyo</span></code>) or shortly thereafter with automated rebuilds (to
+handle C extensions).
+These policies encourage automated dependency generation and loose
+version bounds whenever possible.</p>
+<section id="types-of-python-modules">
+<h3><span class="section-number">4.1. </span>Types of Python Modules<a class="headerlink" href="#types-of-python-modules" title="Permalink to this heading">¶</a></h3>
+<p>There are two kinds of Python modules, “pure” Python modules, and
+extension modules.
+Pure Python modules are Python source code that generally works across
+many versions of Python.
+Extensions are C code compiled and linked against a specific version of
+the Python runtime, and so can only be used by one version of Python.</p>
+<p>Debian Python does not link extensions to <code class="docutils literal notranslate"><span class="pre">libpython</span></code> (as is done in
+some operating systems).
+Symbols are resolved by <code class="file docutils literal notranslate"><span class="pre">/usr/bin/python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em></code> which is not
+linked to <code class="docutils literal notranslate"><span class="pre">libpython</span></code>.</p>
+<p>Python packages are a way of structuring Python’s module namespace by
+using “dotted module names”.
+See <a class="reference external" href="https://docs.python.org/3/glossary.html#term-package">Python’s glossary</a> for details on
+how packages are defined in Python terms (a package in the Python sense
+is unrelated to a Debian package).
+Python packages must be packaged into the same directory (as done by
+upstream).
+Splitting components of a package across directories changes the import
+order and may confuse documentation tools and IDEs.</p>
+<p>There are two ways to distribute Python modules.
+Public modules are installed in a public directory as listed in
+<a class="reference internal" href="index.html#module-path"><span class="std std-ref">Module Path</span></a>.
+They are accessible to any program.
+Private modules are installed in a private directory such as
+<code class="file docutils literal notranslate"><span class="pre">/usr/share/</span><em><span class="pre">package-name</span></em></code> or <code class="file docutils literal notranslate"><span class="pre">/usr/lib/</span><em><span class="pre">package-name</span></em></code>.
+They are generally only accessible to a specific program or suite of
+programs included in the same package.</p>
+</section>
+<section id="wheels">
+<h3><span class="section-number">4.2. </span>Wheels<a class="headerlink" href="#wheels" title="Permalink to this heading">¶</a></h3>
+<p><span class="target" id="index-0"></span><a class="pep reference external" href="https://peps.python.org/pep-0427/"><strong>PEP 427</strong></a> defines a built-package format called “wheels”, which is a
+Zip format archive containing Python code and a <code class="file docutils literal notranslate"><em><span class="pre">*</span></em><span class="pre">.dist-info</span></code>
+metadata directory, in a single file named with the <code class="docutils literal notranslate"><span class="pre">.whl</span></code> suffix.
+As Zip files, wheels containing pure Python can be put on <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>
+and modules in the wheel can be imported directly by Python’s <code class="docutils literal notranslate"><span class="pre">import</span></code>
+statement.
+(Importing extension modules from wheels is not yet supported as of
+Python 3.4.)</p>
+<p>Except as described below, packages must not build or provide wheels.
+They are redundant to the established way of providing Python libraries
+to Debian users, take no advantage of distro-based tools, and are less
+convenient to use.
+E.g. they must be explicitly added to <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>, cannot be easily
+grepped, and stack traces through Zip files are more difficult to debug.</p>
+<p>A very limited set of wheel packages are available in the archive, but
+these support the narrow purpose of enabling the <code class="docutils literal notranslate"><span class="pre">pip</span></code>,
+<code class="docutils literal notranslate"><span class="pre">virtualenv</span></code>, and <code class="docutils literal notranslate"><span class="pre">pyvenv</span></code> tools in a Debian policy compliant way.
+These packages build their own dependent wheels through the use of the
+<code class="docutils literal notranslate"><span class="pre">dirtbike</span></code> “rewheeling” tool, which takes installed Debian packages
+and turns them back into wheels.
+Only universal wheels (i.e. pure-Python, Python 3 and 2 compatible
+packages) are supported, with the exception of wheels of packages that
+no longer support Python 2.
+Wheels built for these packages are not required to be universal.
+Since only the programs that require wheels need build them, only they
+may provide <code class="docutils literal notranslate"><span class="pre">-whl</span></code> packages, e.g. <code class="docutils literal notranslate"><span class="pre">python3-pip-whl</span></code>.</p>
+<p>When these binary packages are installed, <code class="file docutils literal notranslate"><em><span class="pre">*</span></em><span class="pre">.whl</span></code> files must be
+placed in the <code class="file docutils literal notranslate"><span class="pre">/usr/share/python-wheels</span></code> directory.
+The location inside a virtual environment will be rooted in the virtual
+environment, instead of <code class="file docutils literal notranslate"><span class="pre">/usr</span></code>.</p>
+</section>
+<section id="module-package-names">
+<span id="id1"></span><h3><span class="section-number">4.3. </span>Module Package Names<a class="headerlink" href="#module-package-names" title="Permalink to this heading">¶</a></h3>
+<p>Public Python modules must be packaged separately by major Python
+version, to preserve run time separation between Python 2 and Python 3.</p>
+<p>Public Python 3 modules used by other packages must have their binary
+package name prefixed with <code class="docutils literal notranslate"><span class="pre">python3-</span></code>.
+It is recommended to use this prefix for all packages with public
+modules as they may be used by other packages in the future.</p>
+<p>The binary package for module <code class="samp docutils literal notranslate"><em><span class="pre">foo</span></em></code> should preferably be named
+<code class="samp docutils literal notranslate"><span class="pre">python3-</span><em><span class="pre">foo</span></em></code>, if the module name allows.
+This is not required if the binary package installs multiple modules, in
+which case the maintainer shall choose the name of the module which best
+represents the package.</p>
+<p>For the purposes of package naming, the name that is used for a module
+is the name that can be used with <code class="docutils literal notranslate"><span class="pre">import</span></code>, which is not necessarily
+the same as the name used in setuptools <code class="docutils literal notranslate"><span class="pre">PKG-INFO</span></code> and <code class="docutils literal notranslate"><span class="pre">.egg-info</span></code>
+files and directories.
+For example, the module described in <code class="samp docutils literal notranslate"><span class="pre">pyxdg-</span><em><span class="pre">*</span></em><span class="pre">.egg-info</span></code> is used
+via <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">xdg</span></code>, so its package name is <code class="docutils literal notranslate"><span class="pre">python3-xdg</span></code> and not
+<code class="docutils literal notranslate"><span class="pre">python3-pyxdg</span></code>.</p>
+<p>Some modules have names that contain underscores or capital letters,
+which are not allowed in Debian package names.
+The recommendation is to replace underscores with hyphen/minus and
+capital letters with lower-case.
+For example, the modules that can be used with <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">distro_info</span></code>
+and <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">Xlib</span></code> are packaged as <code class="docutils literal notranslate"><span class="pre">python3-distro-info</span></code> and
+<code class="docutils literal notranslate"><span class="pre">python3-xlib</span></code> respectively.</p>
+<p>For subpackages such as <code class="samp docutils literal notranslate"><em><span class="pre">foo.bar</span></em></code>, the recommendation is to name
+the binary package <code class="samp docutils literal notranslate"><span class="pre">python3-</span><em><span class="pre">foo.bar</span></em></code>.</p>
+<p>Such a package should support the current Debian Python version,
+and more if possible (there are several tools to help implement
+this, see <a class="reference internal" href="index.html#packaging-tools"><span class="std std-ref">Packaging Tools</span></a>).
+For example, if Python 3.3, 3.4, and 3.5 are supported, the Python
+statement</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">foo</span>
+</pre></div>
+</div>
+<p>should import the module when the program interpreter is any of
+<code class="file docutils literal notranslate"><span class="pre">/usr/bin/python3.3</span></code>, <code class="file docutils literal notranslate"><span class="pre">/usr/bin/python3.4</span></code>, and
+<code class="file docutils literal notranslate"><span class="pre">/usr/bin/python3.5</span></code>.
+This requirement also applies to extension modules; binaries for all the
+supported Python versions should be included in a single package.</p>
+<p>Packages intended for use with Django (<code class="docutils literal notranslate"><span class="pre">python3-django</span></code>) are installed
+in the same namespace as other python packages for a variety of reasons.
+Many such packages are named <code class="samp docutils literal notranslate"><span class="pre">django_</span><em><span class="pre">name</span></em></code> upstream.
+These are then packaged as <code class="samp docutils literal notranslate"><span class="pre">python3-django-</span><em><span class="pre">name</span></em></code>.
+This makes it clear that they are intended for use with Django and not
+general purpose Python modules.
+Debian maintainers are encouraged to work with their upstreams to
+support consistent use of this approach.</p>
+<p>If the documentation for a module <code class="samp docutils literal notranslate"><em><span class="pre">foo</span></em></code> provided in
+<code class="samp docutils literal notranslate"><span class="pre">python3-</span><em><span class="pre">foo</span></em></code> is large enough that a separate binary package for
+documentation is desired, then the documentation package should
+preferably be named <code class="samp docutils literal notranslate"><span class="pre">python-</span><em><span class="pre">foo</span></em><span class="pre">-doc</span></code> (and in particular, not
+<code class="samp docutils literal notranslate"><span class="pre">python3-</span><em><span class="pre">foo</span></em><span class="pre">-doc</span></code>).</p>
+</section>
+<section id="specifying-supported-versions">
+<h3><span class="section-number">4.4. </span>Specifying Supported Versions<a class="headerlink" href="#specifying-supported-versions" title="Permalink to this heading">¶</a></h3>
+<p>The <code class="file docutils literal notranslate"><span class="pre">debian/control</span></code> source paragraph may contain optional fields
+to specify the versions of Python the package supports.</p>
+<p>The optional <code class="docutils literal notranslate"><span class="pre">X-Python3-Version</span></code> field specifies the versions of
+Python 3 supported.
+When not specified, it defaults to all currently supported Python 3
+versions.</p>
+<p>Similarly, the optional fields <code class="docutils literal notranslate"><span class="pre">X-Python-Version</span></code> or
+<code class="docutils literal notranslate"><span class="pre">XS-Python-Version</span></code> were used to specify the versions of Python 2
+supported by the source package.
+They are obsolete and must be removed.</p>
+<p>These fields are used by some packaging scripts to automatically
+generate appropriate Depends and Provides lines.
+The format of the field may be one of the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">-</span><span class="n">Python3</span><span class="o">-</span><span class="n">Version</span><span class="p">:</span> <span class="o">&gt;=</span> <span class="n">X</span><span class="o">.</span><span class="n">Y</span>
+<span class="n">X</span><span class="o">-</span><span class="n">Python3</span><span class="o">-</span><span class="n">Version</span><span class="p">:</span> <span class="o">&gt;=</span> <span class="n">A</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="o">&lt;&lt;</span> <span class="n">X</span><span class="o">.</span><span class="n">Y</span>
+<span class="n">XS</span><span class="o">-</span><span class="n">Python</span><span class="o">-</span><span class="n">Version</span><span class="p">:</span> <span class="n">A</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">Y</span>
+</pre></div>
+</div>
+<p>The keyword <code class="docutils literal notranslate"><span class="pre">all</span></code> is no longer to be used since using version numbers
+is clearer than <code class="docutils literal notranslate"><span class="pre">all</span></code> and encodes more information.
+The keyword <code class="docutils literal notranslate"><span class="pre">all</span></code> must be ignored for Python 3 versions.</p>
+<p>A comma-separated list of multiple individual versions (e.g. <code class="docutils literal notranslate"><span class="pre">3.3,</span> <span class="pre">3.4,</span>
+<span class="pre">3.5</span></code>) in <code class="docutils literal notranslate"><span class="pre">XS-Python-Version</span></code> will continue to be supported, but
+is not recommended.</p>
+<p>The use of multiple individual versions in <code class="docutils literal notranslate"><span class="pre">X-Python-Version</span></code> or
+<code class="docutils literal notranslate"><span class="pre">X-Python3-Version</span></code> is not supported for Wheezy and later releases.</p>
+<p>The keyword <code class="docutils literal notranslate"><span class="pre">current</span></code> has been deprecated and must not be used.
+It must be ignored for Python 3 versions.</p>
+<p>The use of <code class="docutils literal notranslate"><span class="pre">XB-Python-Version</span></code> in the binary package paragraphs of
+<code class="file docutils literal notranslate"><span class="pre">debian/control</span></code> file has been deprecated and should be removed in
+the normal course of package updates.
+It never achieved sufficient deployment to support its intended purpose
+of managing Python transitions.
+This purpose can be adequately accomplished by examining package
+dependencies.</p>
+</section>
+<section id="dependencies">
+<h3><span class="section-number">4.5. </span>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading">¶</a></h3>
+<p>Any package that installs modules for the default Python version (or
+many versions including the default) as described in
+<a class="reference internal" href="#module-package-names"><span class="std std-ref">Module Package Names</span></a>, must declare a dependency on the default
+Python runtime package.
+If it requires other modules to work, the package must declare
+dependencies on the corresponding packaged modules.
+The package must not declare dependency on any version-specific Python
+runtime or module package.</p>
+<p>For Python 3, the correct dependencies are <code class="samp docutils literal notranslate"><span class="pre">Depends:</span>
+<span class="pre">python3 (&gt;= 3.</span><em><span class="pre">Y</span></em><span class="pre">)</span></code> and any corresponding <code class="samp docutils literal notranslate"><span class="pre">python3-</span><em><span class="pre">foo</span></em></code>
+packages.</p>
+<p>If any Python 2 packages remain, the correct dependencies are
+<code class="samp docutils literal notranslate"><span class="pre">Depends:</span> <span class="pre">python2 (&gt;= 2.</span><em><span class="pre">Y</span></em><span class="pre">)</span></code> and any corresponding
+<code class="samp docutils literal notranslate"><span class="pre">python2-</span><em><span class="pre">foo</span></em></code> packages.</p>
+<p>Any package that installs Python modules or Python 3 binary extensions
+must also declare a maximum version it supports as currently built.
+This is accomplished by declaring a maximum version constraint strictly
+less than one higher than the current maximum version, i.e.
+<code class="samp docutils literal notranslate"><span class="pre">Depends:</span> <span class="pre">python3 (&lt;&lt; </span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em><span class="pre">)</span></code>.</p>
+</section>
+<section id="provides">
+<h3><span class="section-number">4.6. </span>Provides<a class="headerlink" href="#provides" title="Permalink to this heading">¶</a></h3>
+<p>Binary packages that declare Provides dependencies of the form
+<code class="samp docutils literal notranslate"><span class="pre">python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em><span class="pre">-foo</span></code> were never supported for Python 3.
+They should be removed in the normal course of package updates.
+Future provision of values for the substitution variable
+<code class="docutils literal notranslate"><span class="pre">python:Provides</span></code> is not guaranteed.</p>
+</section>
+<section id="modules-byte-compilation">
+<span id="module-byte-compilation"></span><h3><span class="section-number">4.7. </span>Modules Byte-Compilation<a class="headerlink" href="#modules-byte-compilation" title="Permalink to this heading">¶</a></h3>
+<p>If a binary package provides any binary-independent modules
+(<code class="file docutils literal notranslate"><em><span class="pre">foo</span></em><span class="pre">.py</span></code> files), the corresponding byte-compiled modules
+(<code class="file docutils literal notranslate"><em><span class="pre">foo</span></em><span class="pre">.pyc</span></code> files) and optimized modules (<code class="file docutils literal notranslate"><em><span class="pre">foo</span></em><span class="pre">.pyo</span></code>
+files) must not ship in the package.
+Instead, they should be generated in the package’s post-install script,
+and removed in the package’s pre-remove script.
+The package’s <code class="file docutils literal notranslate"><span class="pre">prerm</span></code> has to make sure that both <code class="file docutils literal notranslate"><em><span class="pre">foo</span></em><span class="pre">.pyc</span></code>
+and <code class="file docutils literal notranslate"><em><span class="pre">foo</span></em><span class="pre">.pyo</span></code> are removed.</p>
+<p>A binary package should only byte-compile the files which belong to the
+package.</p>
+<p>The file <code class="file docutils literal notranslate"><span class="pre">/etc/python/debian_config</span></code> allows configuration how
+modules should be byte-compiled.
+The post-install scripts should respect these settings.</p>
+<p>Pure Python modules in private installation directories that are
+byte-compiled with the default Python version must be forcefully
+byte-compiled again when the default Python version changes.</p>
+<p>Public Python extensions should be bin-NMUed.</p>
+<p>Private Python extensions should be subject to binary NMUs every time
+the default interpreter changes, unless the extension is updated through
+a <code class="file docutils literal notranslate"><em><span class="pre">*</span></em><span class="pre">.rtupdate</span></code> script.</p>
+</section>
+</section>
+<span id="document-python-programs"></span><section id="python-programs">
+<h2><span class="section-number">5. </span>Python Programs<a class="headerlink" href="#python-programs" title="Permalink to this heading">¶</a></h2>
+<section id="interpreter-directive-shebang">
+<h3><span class="section-number">5.1. </span>Interpreter directive (“Shebang”)<a class="headerlink" href="#interpreter-directive-shebang" title="Permalink to this heading">¶</a></h3>
+<p>Executables written for interpretation by Python must use an appropriate
+interpreter directive, or “shebang”, as the first line of the program.
+This line should be of the form <code class="samp docutils literal notranslate"><span class="pre">#!</span><em><span class="pre">interpreter_location</span></em></code>.
+See <a class="reference internal" href="index.html#interpreter-name"><span class="std std-ref">Interpreter Name</span></a> for the interpreter name to use.</p>
+<p>As noted in <a class="reference internal" href="index.html#interpreter-location"><span class="std std-ref">Interpreter Location</span></a>, the form <code class="samp docutils literal notranslate"><span class="pre">#!/usr/bin/env</span>
+<em><span class="pre">interpreter_name</span></em></code> is deprecated.</p>
+</section>
+<section id="programs-using-the-default-python">
+<h3><span class="section-number">5.2. </span>Programs using the default Python<a class="headerlink" href="#programs-using-the-default-python" title="Permalink to this heading">¶</a></h3>
+<p>A package that installs a program that can be run by any version of
+Python 3 must declare a dependency on <code class="docutils literal notranslate"><span class="pre">python3</span></code>, with a versioned
+dependency if necessary.</p>
+<p>A package that installs a program that can be run by any version of
+Python 2 must declare a dependency on <code class="docutils literal notranslate"><span class="pre">python2</span></code>, with a versioned
+dependency if necessary.</p>
+<p>If the program needs the public Python module <code class="docutils literal notranslate"><span class="pre">foo</span></code>, the package must
+depend on the binary package that installs the <code class="docutils literal notranslate"><span class="pre">foo</span></code> module.
+See <a class="reference internal" href="index.html#module-package-names"><span class="std std-ref">Module Package Names</span></a> for the naming of packages that install
+public Python modules.</p>
+</section>
+<section id="programs-shipping-private-modules">
+<h3><span class="section-number">5.3. </span>Programs Shipping Private Modules<a class="headerlink" href="#programs-shipping-private-modules" title="Permalink to this heading">¶</a></h3>
+<p>A program that specifies <code class="docutils literal notranslate"><span class="pre">python3</span></code> as its interpreter may require its
+own private Python modules.
+These modules should be installed in <code class="file docutils literal notranslate"><span class="pre">/usr/share/</span><em><span class="pre">module</span></em></code>, or
+<code class="file docutils literal notranslate"><span class="pre">/usr/lib/</span><em><span class="pre">module</span></em></code> if the modules are architecture-dependent
+(e.g.  extensions).</p>
+<p>The rules explained in <a class="reference internal" href="index.html#module-byte-compilation"><span class="std std-ref">Modules Byte-Compilation</span></a> apply to those
+private modules: the byte-compiled modules must not be shipped with the
+binary package, they should be generated in the package’s post-install
+script using the current default Python version, and removed in the
+pre-remove script.
+Modules should be byte-compiled using the current default Python
+version.</p>
+<p>Programs that have private compiled extensions must either handle
+multiple version support themselves, or declare a tight dependency on
+the current Python version (e.g. <code class="docutils literal notranslate"><span class="pre">Depends:</span> <span class="pre">python3 (&gt;= 3.5),</span>
+<span class="pre">python3 (&lt;&lt; 3.6)</span></code>.</p>
+</section>
+<section id="programs-using-a-particular-python-version">
+<h3><span class="section-number">5.4. </span>Programs Using a Particular Python Version<a class="headerlink" href="#programs-using-a-particular-python-version" title="Permalink to this heading">¶</a></h3>
+<p>A program which requires a specific minor version of Python must specify
+the versioned interpreter <code class="samp docutils literal notranslate"><span class="pre">python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em></code>.
+The package that installs the programs must also specify a dependency on
+<code class="samp docutils literal notranslate"><span class="pre">python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em></code> and on any packages that install necessary
+modules.</p>
+<p>The notes on installation directories and byte-compilation for programs
+that support any version of Python also apply to programs supporting
+only a single Python version.
+Modules to be byte-compiled should use the same Python version as the
+package itself.</p>
+</section>
+</section>
+<span id="document-embedded-python"></span><section id="programs-embedding-python">
+<h2><span class="section-number">6. </span>Programs Embedding Python<a class="headerlink" href="#programs-embedding-python" title="Permalink to this heading">¶</a></h2>
+<section id="building-embedded-programs">
+<h3><span class="section-number">6.1. </span>Building Embedded Programs<a class="headerlink" href="#building-embedded-programs" title="Permalink to this heading">¶</a></h3>
+<p>Any package that installs a program which embeds a Python interpreter
+must declare <code class="docutils literal notranslate"><span class="pre">Build-Depends</span></code> on <code class="samp docutils literal notranslate"><span class="pre">python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em><span class="pre">-dev</span></code>, where
+<code class="samp docutils literal notranslate"><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em></code> is the Python version the program builds against.
+It should be the current default Python version unless the program does
+not work correctly with this version.</p>
+</section>
+<section id="embedded-python-dependencies">
+<h3><span class="section-number">6.2. </span>Embedded Python Dependencies<a class="headerlink" href="#embedded-python-dependencies" title="Permalink to this heading">¶</a></h3>
+<p>Dependencies for programs linking against the shared Python library will
+be automatically created by <code class="docutils literal notranslate"><span class="pre">dpkg-shlibdeps</span></code>.
+The <code class="samp docutils literal notranslate"><span class="pre">libpython</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em><span class="pre">.so.</span><em><span class="pre">Z</span></em></code> library the program is built against
+is provided by the <code class="samp docutils literal notranslate"><span class="pre">python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em></code> package.</p>
+</section>
+</section>
+<span id="document-locally-installed-python"></span><section id="interaction-with-locally-installed-python-versions">
+<h2><span class="section-number">7. </span>Interaction with Locally Installed Python Versions<a class="headerlink" href="#interaction-with-locally-installed-python-versions" title="Permalink to this heading">¶</a></h2>
+<p>As long as you don’t install other versions of Python in your path,
+Debian’s Python versions won’t be affected by a new version.</p>
+<p>If you install a different micro version of the version of Python you
+have got installed, you will need to be careful to install all the
+modules you use for that version of Python too.</p>
+</section>
+</div>
+<div class="toctree-wrapper compound" id="appendix">
+<span id="document-build-dependencies"></span><section id="build-dependencies">
+<h2><span class="section-number">1. </span>Build Dependencies<a class="headerlink" href="#build-dependencies" title="Permalink to this heading">¶</a></h2>
+<p>Build dependencies for Python-dependent packages must be declared for
+every Python version that the package is built for.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">python3-all-dev</span></code> should be used when building extensions for any
+or all Python 3 versions.
+The <code class="docutils literal notranslate"><span class="pre">python-all-dev</span></code> should be used when building extensions for any
+or all Python 2 versions.
+To build for a specific version or versions, declare <code class="docutils literal notranslate"><span class="pre">Build-Depends</span></code>
+on <code class="samp docutils literal notranslate"><span class="pre">python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em><span class="pre">-dev</span></code>.</p>
+<p>Some applications and pure Python modules may be able to avoid
+dependency on the <code class="docutils literal notranslate"><span class="pre">-dev</span></code> packages, and declare <code class="docutils literal notranslate"><span class="pre">Build-Depends</span></code> on
+the runtime environment only
+(<code class="docutils literal notranslate"><span class="pre">python3</span></code>, <code class="docutils literal notranslate"><span class="pre">python3-all</span></code>, <code class="docutils literal notranslate"><span class="pre">python2</span></code>, <code class="docutils literal notranslate"><span class="pre">python2-all</span></code>).
+A package that does not require the <code class="docutils literal notranslate"><span class="pre">-dev</span></code> packages must not declare
+<code class="docutils literal notranslate"><span class="pre">Build-Depends</span></code> on them.</p>
+<p>Declare <code class="docutils literal notranslate"><span class="pre">Build-Depends</span></code> on at least:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Build</span><span class="o">-</span><span class="n">Depends</span><span class="p">:</span> <span class="n">python2</span><span class="mf">.7</span>
+<span class="n">Build</span><span class="o">-</span><span class="n">Depends</span><span class="p">:</span> <span class="n">python2</span><span class="mf">.6</span> <span class="p">(</span><span class="o">&gt;=</span> <span class="mf">2.6</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Build</span><span class="o">-</span><span class="n">Depends</span><span class="p">:</span> <span class="n">python</span> <span class="p">(</span><span class="o">&gt;=</span> <span class="mf">2.6.6</span><span class="o">-</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">Build</span><span class="o">-</span><span class="n">Depends</span><span class="p">:</span> <span class="n">python</span><span class="o">-</span><span class="nb">all</span>
+
+<span class="n">Build</span><span class="o">-</span><span class="n">Depends</span><span class="p">:</span> <span class="n">python2</span><span class="mf">.7</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">Build</span><span class="o">-</span><span class="n">Depends</span><span class="p">:</span> <span class="n">python3</span><span class="mf">.5</span><span class="o">-</span><span class="n">dev</span> <span class="p">(</span><span class="o">&gt;=</span> <span class="mf">3.5.1</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Build</span><span class="o">-</span><span class="n">Depends</span><span class="p">:</span> <span class="n">python</span><span class="o">-</span><span class="n">dev</span> <span class="p">(</span><span class="o">&gt;=</span> <span class="mf">2.6.6</span><span class="o">-</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">Build</span><span class="o">-</span><span class="n">Depends</span><span class="p">:</span> <span class="n">python</span><span class="o">-</span><span class="nb">all</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">Build</span><span class="o">-</span><span class="n">Depends</span><span class="p">:</span> <span class="n">python3</span><span class="o">-</span><span class="nb">all</span><span class="o">-</span><span class="n">dev</span> <span class="p">(</span><span class="o">&gt;=</span> <span class="mf">3.2</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<span id="document-packaging-tools"></span><section id="packaging-tools">
+<span id="id1"></span><h2><span class="section-number">2. </span>Packaging Tools<a class="headerlink" href="#packaging-tools" title="Permalink to this heading">¶</a></h2>
+<p>This section describes the various tools to help package Python programs
+and modules for Debian.
+Although none of these tools are mandatory, their use is strongly
+encouraged, as the above policy has been designed with them in mind (and
+vice versa).
+This appendix is just an overview.
+If you use these tools, you should read their full documentation.</p>
+<section id="distutils">
+<h3><span class="section-number">2.1. </span>distutils<a class="headerlink" href="#distutils" title="Permalink to this heading">¶</a></h3>
+<p>The standard Python <code class="docutils literal notranslate"><span class="pre">distutils</span></code> module has been modified in Debian to
+change the default installation directory of public Python modules and
+to add a new flag to the <code class="docutils literal notranslate"><span class="pre">install</span></code> command to override the default,
+<code class="docutils literal notranslate"><span class="pre">--install-layout=</span></code>.</p>
+<p>Public Python modules installed with a modified distutils default to
+<code class="file docutils literal notranslate"><span class="pre">/usr/local/lib/python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em><span class="pre">/dist-packages</span></code> for Python 2.6 and
+later.
+This directory is seen by the system-provided Python 2.6.</p>
+<p>When using a local Python installation, the default is
+<code class="file docutils literal notranslate"><span class="pre">/usr/local/lib/python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em><span class="pre">/site-packages</span></code> which is only seen by
+the local Python installation.</p>
+<p>Using the <code class="docutils literal notranslate"><span class="pre">--install-layout=deb</span></code> flag to the <code class="docutils literal notranslate"><span class="pre">install</span></code> command of
+<code class="file docutils literal notranslate"><span class="pre">setup.py</span></code> with a system-provided Python 2.6 or later versions,
+Python modules will be installed to
+<code class="file docutils literal notranslate"><span class="pre">/usr/lib/python</span><em><span class="pre">X</span></em><span class="pre">.</span><em><span class="pre">Y</span></em><span class="pre">/dist-packages</span></code> which is only seen by the
+system-provided Python, not by a local installation.</p>
+</section>
+<section id="setuptools">
+<h3><span class="section-number">2.2. </span>setuptools<a class="headerlink" href="#setuptools" title="Permalink to this heading">¶</a></h3>
+<p>The related Python <code class="docutils literal notranslate"><span class="pre">setuptools</span></code> module has been modified in Debian
+along the same lines as <code class="docutils literal notranslate"><span class="pre">distutils</span></code>.</p>
+<p>Upstream focus on developments and improvements for Python packaging
+tools has largely shifted away from <code class="docutils literal notranslate"><span class="pre">distutils</span></code> and to <code class="docutils literal notranslate"><span class="pre">setuptools</span></code>.
+They offer a similar API and at some point in the future, <code class="docutils literal notranslate"><span class="pre">setuptools</span></code>
+may fully replace <code class="docutils literal notranslate"><span class="pre">distutils</span></code> in Debian package builds.</p>
+</section>
+<section id="dh-python">
+<h3><span class="section-number">2.3. </span>dh-python<a class="headerlink" href="#dh-python" title="Permalink to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">dh-python</span></code> provides extensions for <code class="docutils literal notranslate"><span class="pre">debhelper</span></code> to make it easier to
+package Python modules and extensions.
+They calculate Python dependencies, add maintainer scripts to byte
+compile files, etc.
+Their use is not mandatory, but they are recommended by the Debian
+Python maintainers.
+See <a class="reference external" href="https://manpages.debian.org/dh_python3">man dh_python3</a> for
+details.</p>
+</section>
+<section id="pybuild">
+<h3><span class="section-number">2.4. </span>pybuild<a class="headerlink" href="#pybuild" title="Permalink to this heading">¶</a></h3>
+<p>Pybuild is a Debian Python specific build system that invokes various
+build systems for requested Python versions in order to build modules
+and extensions.
+It supports automatically building for multiple Python versions.</p>
+</section>
+<section id="cdbs">
+<h3><span class="section-number">2.5. </span>CDBS<a class="headerlink" href="#cdbs" title="Permalink to this heading">¶</a></h3>
+<p>The CDBS <code class="file docutils literal notranslate"><span class="pre">python-distutils.mk</span></code> class helps packaging of distutils
+based Python packages.</p>
+</section>
+<section id="python-support-removed">
+<h3><span class="section-number">2.6. </span>python-support (removed)<a class="headerlink" href="#python-support-removed" title="Permalink to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">python-support</span></code> provided another way to manage Python modules.
+It has been removed from Debian Stretch and later releases.</p>
+</section>
+<section id="python-central-removed">
+<h3><span class="section-number">2.7. </span>python-central (removed)<a class="headerlink" href="#python-central-removed" title="Permalink to this heading">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">python-central</span></code> provided another way to manage Python modules.
+It has been removed from Debian Jessie and later releases.</p>
+</section>
+</section>
+<span id="document-upgrade-procedure"></span><section id="upgrade-procedure">
+<h2><span class="section-number">3. </span>Upgrade Procedure<a class="headerlink" href="#upgrade-procedure" title="Permalink to this heading">¶</a></h2>
+<p>This section describes the procedure for the upgrade when the
+default Python version is changed in the Debian <code class="docutils literal notranslate"><span class="pre">unstable</span></code> release,
+requiring recompilation of many Python-related packages.</p>
+<ol class="arabic simple">
+<li><p>Selected pre-releases and release candidates of new Python versions
+are uploaded to Debian <code class="docutils literal notranslate"><span class="pre">experimental</span></code> to support pre-transition
+work and testing.</p></li>
+<li><p>Application and module maintainers make sourceful changes where
+needed to prepare for the new Python version when needed.</p></li>
+<li><p>Have a long and heated discussion.</p></li>
+<li><p>The Debian Python maintainer and module/application maintainers
+discuss the readiness for a new default Debian Python version and
+associated packaging/policy changes.
+Once there is some consensus, the Python maintainer announces the
+upgrade and uploads to <code class="docutils literal notranslate"><span class="pre">unstable</span></code>.</p></li>
+<li><p>Upload of the Python core meta-packages <code class="docutils literal notranslate"><span class="pre">python3</span></code>,
+<code class="docutils literal notranslate"><span class="pre">python3-dev</span></code>, <code class="docutils literal notranslate"><span class="pre">python3-doc</span></code> and several
+<code class="samp docutils literal notranslate"><span class="pre">python3-</span><em><span class="pre">module</span></em></code>, depending on the new <code class="samp docutils literal notranslate"><span class="pre">python3.</span><em><span class="pre">Y</span></em></code>,
+<code class="samp docutils literal notranslate"><span class="pre">python3.</span><em><span class="pre">Y</span></em><span class="pre">-dev</span></code> and so on.</p></li>
+<li><p>The Debian release team schedules rebuilds for packages that may
+need it.
+Packages that require additional manual work get updated and
+uploaded.</p></li>
+</ol>
+<p>The necessary package builds are typically done in three phases in order
+to keep transitions as smooth as possible.
+For Python 3, there is no general need to update architecture all
+packages for a new Python 3 version. Only architecture any packages need
+to be rebuilt.</p>
+<ol class="arabic simple">
+<li><p>The new Python 3 version is added to supported versions and packages
+that support multiple Python 3 versions are binNMUed.
+They now support both the new and older Python 3 versions.
+This requires transition assistance from the release team in the form
+of a transition tracker and binNMU scheduling, but is not a
+transition that can cause entanglements with other transitions in
+Debian.</p></li>
+<li><p>Once the default Python 3 version is changed, binNMUs are done for
+packages that only support one Python 3 version.
+Some transient uninstallability is unavoidable.
+This is a transition that can entangle other transitions in Debian
+and requires more careful coordination with the release team.</p></li>
+<li><p>After the old Python 3 version is dropped from supported versions
+then packages with multi-version support are binNMUed again to remove
+support for the old Python 3 version.
+This is not a true transition and only needs a tracker and binNMU
+scheduling.</p></li>
+</ol>
+</section>
+<span id="document-this-document"></span><section id="this-document">
+<h2><span class="section-number">4. </span>This document<a class="headerlink" href="#this-document" title="Permalink to this heading">¶</a></h2>
+<p>Source of this document is <code class="file docutils literal notranslate"><span class="pre">policy/</span></code> in git repository
+<a class="reference external" href="https://salsa.debian.org/cpython-team/python3-defaults">python3-defaults</a>.</p>
+<p>Propose changes to this policy on the <a class="reference external" href="https://lists.debian.org/debian-python/">debian-python mailing list</a> for review.</p>
+</section>
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="#">Table of Contents</a></h3>
+    <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-copyright">1. Copyright</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-python3">2. Completing the move to Python 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#removal-of-the-unversioned-packages">2.1. Removal of the unversioned packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#unversioned-python-commands">2.2. Unversioned python commands</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-interpreter">3. Python Packaging</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#versions">3.1. Versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#main-packages">3.2. Main packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#virtual-packages-for-python-version-specific-dependencies">3.3. Virtual packages for Python-version specific dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#minimal-packages">3.4. Minimal packages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#python-interpreter">3.5. Python Interpreter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="index.html#interpreter-name">3.5.1. Interpreter Name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#interpreter-location">3.5.2. Interpreter Location</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#module-path">3.6. Module Path</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#hooks-for-updates-to-installed-runtimes">3.7. Hooks for updates to installed runtimes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#documentation">3.8. Documentation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-packaged-modules">4. Packaged Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#types-of-python-modules">4.1. Types of Python Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#wheels">4.2. Wheels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#module-package-names">4.3. Module Package Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#specifying-supported-versions">4.4. Specifying Supported Versions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dependencies">4.5. Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#provides">4.6. Provides</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#modules-byte-compilation">4.7. Modules Byte-Compilation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-python-programs">5. Python Programs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#interpreter-directive-shebang">5.1. Interpreter directive (“Shebang”)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#programs-using-the-default-python">5.2. Programs using the default Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#programs-shipping-private-modules">5.3. Programs Shipping Private Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#programs-using-a-particular-python-version">5.4. Programs Using a Particular Python Version</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-embedded-python">6. Programs Embedding Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#building-embedded-programs">6.1. Building Embedded Programs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#embedded-python-dependencies">6.2. Embedded Python Dependencies</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-locally-installed-python">7. Interaction with Locally Installed Python Versions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Appendix</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-build-dependencies">1. Build Dependencies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-packaging-tools">2. Packaging Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="index.html#distutils">2.1. distutils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#setuptools">2.2. setuptools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#dh-python">2.3. dh-python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#pybuild">2.4. pybuild</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#cdbs">2.5. CDBS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#python-support-removed">2.6. python-support (removed)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#python-central-removed">2.7. python-central (removed)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-upgrade-procedure">3. Upgrade Procedure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html#document-this-document">4. This document</a></li>
+</ul>
+
+  </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="nav-item nav-item-0"><a href="#">Debian Python Policy 0.12.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Debian Python Policy 0.12.0.0 documentation</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; <a href="#">Copyright</a> 1999-2023, Software in the Public Interest.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  </body>
+</html>

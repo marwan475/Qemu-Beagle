@@ -1,0 +1,14 @@
+/.
+/opt
+/opt/u-boot
+/opt/u-boot/bb-u-boot-am335x-evm
+/opt/u-boot/bb-u-boot-am335x-evm/MLO
+/opt/u-boot/bb-u-boot-am335x-evm/install-mmcblk0.sh
+/opt/u-boot/bb-u-boot-am335x-evm/install-mmcblk1.sh
+/opt/u-boot/bb-u-boot-am335x-evm/install.sh
+/opt/u-boot/bb-u-boot-am335x-evm/u-boot-dtb.img
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/bb-u-boot-am335x-evm
+/usr/share/doc/bb-u-boot-am335x-evm/changelog.Debian.gz

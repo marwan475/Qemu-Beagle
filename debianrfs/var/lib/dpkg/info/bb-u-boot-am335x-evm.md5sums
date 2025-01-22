@@ -1,0 +1,6 @@
+04e7b094f7715ca344ee44d43a396ce2  opt/u-boot/bb-u-boot-am335x-evm/MLO
+928d9b5bca56b47b257105b192f941e1  opt/u-boot/bb-u-boot-am335x-evm/install-mmcblk0.sh
+58447a225d9c8908fffb653569128d9e  opt/u-boot/bb-u-boot-am335x-evm/install-mmcblk1.sh
+25af9acdf551c55f9dd5cc0821be058c  opt/u-boot/bb-u-boot-am335x-evm/install.sh
+9cbbcf73cbc3ee975e94c737a304c726  opt/u-boot/bb-u-boot-am335x-evm/u-boot-dtb.img
+bd8a47814a7d257d4189ca31ab789a9a  usr/share/doc/bb-u-boot-am335x-evm/changelog.Debian.gz

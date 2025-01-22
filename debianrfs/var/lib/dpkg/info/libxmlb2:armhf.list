@@ -1,0 +1,11 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libxmlb.so.2.0.0
+/usr/share
+/usr/share/doc
+/usr/share/doc/libxmlb2
+/usr/share/doc/libxmlb2/changelog.Debian.gz
+/usr/share/doc/libxmlb2/copyright
+/usr/lib/arm-linux-gnueabihf/libxmlb.so.2

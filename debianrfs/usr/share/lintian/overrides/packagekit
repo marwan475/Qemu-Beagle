@@ -1,0 +1,3 @@
+# These libraries are used for testing and are loaded dynamically by the PK daemon,
+# so they don't need explicit libc linkage.
+packagekit: library-not-linked-against-libc [usr/lib/*/packagekit-backend/libpk_backend_test*.so]

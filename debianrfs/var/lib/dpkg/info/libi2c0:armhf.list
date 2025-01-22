@@ -1,0 +1,13 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libi2c.so.0.1.1
+/usr/share
+/usr/share/doc
+/usr/share/doc/libi2c0
+/usr/share/doc/libi2c0/changelog.Debian.armhf.gz
+/usr/share/doc/libi2c0/changelog.Debian.gz
+/usr/share/doc/libi2c0/changelog.gz
+/usr/share/doc/libi2c0/copyright
+/usr/lib/arm-linux-gnueabihf/libi2c.so.0

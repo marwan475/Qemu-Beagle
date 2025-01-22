@@ -1,0 +1,31 @@
+hexedit for Debian
+------------------
+
+The following issue was fixed in Debian. However, I will keep this README file
+for future reference. See also #933053.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Wed, 28 Nov 2018 22:11:12 -0200
+
+
+hexedit is truncating the address in first line when running over some
+terminals. See an example below:
+
+0   46 6F 72 6D  61 74 3A 20  68 74 74 70  73 3A 2F 2F  77 77 77 2E  64 65 62 69  Format: https://www.debi
+00000018   61 6E 2E 6F  72 67 2F 64  6F 63 2F 70  61 63 6B 61  67 69 6E 67  2D 6D 61 6E  an.org/doc/packaging-man
+00000030   75 61 6C 73  2F 63 6F 70  79 72 69 67  68 74 2D 66  6F 72 6D 61  74 2F 31 2E  uals/copyright-format/1.
+00000048   30 2F 0A 55  70 73 74 72  65 61 6D 2D  4E 61 6D 65  3A 20 68 65  78 65 64 69  0/.Upstream-Name: hexedi
+
+There is a opened bug about it opened in Debian (#909963) and here[1]. As a
+workaround, you can set a terminal when starting hexedit, as shown below:
+
+  $ TERM=linux hexedit file.txt
+
+or
+
+  $ TERM=rxvt hexedit file.txt
+
+However, this procedure maybe allow no edit the opened file.
+
+[1] https://github.com/pixel/hexedit/issues/31
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Wed, 28 Nov 2018 22:18:20 -0300

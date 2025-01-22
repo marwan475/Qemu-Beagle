@@ -1,0 +1,7 @@
+a509f2ca0218f0a176bbe2a4b7c3b978  usr/bin/pkcon
+d738a3fc240382949cd6522002271b5e  usr/bin/pkmon
+8d636d7269f46584ea1fb74ac3fd52e1  usr/share/bash-completion/completions/pkcon
+71a39c64e35f9149a093149e62c40546  usr/share/doc/packagekit-tools/changelog.Debian.gz
+e5d1cb8dbbd4e70c2c8b473e9699bbb2  usr/share/doc/packagekit-tools/copyright
+2f457dcbc7abc1dd05121c14ecb43d17  usr/share/man/man1/pkcon.1.gz
+5d50821f3c645ceff56ccfe2185ace30  usr/share/man/man1/pkmon.1.gz

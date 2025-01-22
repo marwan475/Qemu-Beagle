@@ -1,0 +1,15 @@
+/.
+/lib
+/lib/firmware
+/lib/firmware/bbb.io
+/lib/firmware/bbb.io/cyfmac43455-sdio.bin
+/lib/firmware/bbb.io/cyfmac43455-sdio.clm_blob
+/lib/firmware/brcm
+/lib/firmware/brcm/brcmfmac43455-sdio.beagleboard.org,am5729-beagleboneai.txt
+/lib/firmware/brcm/brcmfmac43455-sdio_am5729-beagleboneai.bin
+/lib/firmware/brcm/fw_bcm43455c0_ag.bin
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/bb-bbai-firmware
+/usr/share/doc/bb-bbai-firmware/changelog.Debian.gz

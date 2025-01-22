@@ -1,0 +1,89 @@
+Basic requirements
+------------------------------
+
+To use Mender as an Over-The-Air updater for full rootfs images,
+Mender relies on you using a multi-partition layout that contains
+at least TWO (equal sized) root partitions plus a (persistent) data
+partition. All data that is supposed to be kept around after updates
+needs to be stored in the data partition. This package assumes you
+mount your data partition at /data, but you are free to mount it
+where ever you want but that might require some extra configuration
+on your side.
+
+Mender can also be used as a secure updater for partial updates (aka
+application updates) using it's Update Modules support. If you intend
+to use mender only for this kind of updates, no changes are needed in
+the partition layout and the bootloader setup section below can be
+skipped. For further information see
+https://docs.mender.io/2.0/devices/update-modules , and for community
+maintained Update Modules see https://hub.mender.io/c/update-modules .
+
+Bootloader setup
+------------------------------
+
+Mender also needs a custom patched version of u-boot that contains
+logic about which root partition is to be considered the "active"
+one and should be booted (including logic to fall back on the other
+one when an update has been done but won't start).
+
+You should configure your u-boot environment as a minimum to use
+a few custom mender-specific bits: first you need to "run mender_setup"
+then hook up your booting procedure to use the generated
+"mender_*" variables that specifies which partition/device/filesystem
+to use, etc. Finally if booting fails, you should as a fallback
+"run mender_altbootcmd". (You might also need to make sure the
+environment gets saved to storage, or the mender-client might get
+confused and log that it's not able to determine which is the currently
+running active partition. Also make sure your /etc/fw_env.config is
+set up properly so fw_printenv can list your environment.)
+
+You can find an example u-boot fork at:
+https://github.com/mendersoftware/uboot-mender
+
+
+Client setup
+------------------------------
+
+Helpful information on how to integrate mender in your system
+is available at:
+
+https://mender.io/blog/porting-mender-to-a-non-yocto-build-system
+
+This package contains a pre-built version of "The Mender program"
+including systemd unit file, symlinking /var/lib/mender to
+/data/mender.
+
+See info about u-boot patching, /etc/fw_env.config, "Configuring
+Mender", artifact_info, Artifacts, etc. which you will need to set up
+yourself for your system image builder environment.
+
+You need to provide your own program that generates the device identity and
+place it at /usr/share/mender/identity/mender-device-identity .
+See example at /usr/share/doc/mender-client/examples/mender-device-identity
+For further information see
+https://docs.mender.io/2.0/client-configuration/identity .
+
+In addition, you will want to provide inventory scripts that can be used to
+gather information about the running system and place them at
+/usr/share/mender/inventory/ .
+See examples at /usr/share/doc/mender-client/examples/mender-inventory-*
+For further information see
+https://docs.mender.io/2.0/client-configuration/inventory .
+
+You will also need to provide a settings file for the mender client
+program at /var/lib/mender/mender.conf (aka /data/mender/mender.conf)
+that points out your update server, certificates, etc.
+For examples see /usr/share/doc/mender-client/examples/mender.conf.production
+of /usr/share/doc/mender-client/examples/mender.conf.demo
+
+You also want to ship the certificate (public key) for the mender server
+you are going to use, eg. at /etc/mender/server.crt, and configure
+the path to it in your mender.conf file.
+
+If you want to test things out using the "demo" docker environment you'll
+find the demo server key at:
+https://github.com/mendersoftware/meta-mender/blob/master/meta-mender-demo/recipes-mender/mender/files/server.crt
+And the "integration" repo which helps you get started with running the
+demo docker environment is at: https://github.com/mendersoftware/integration
+
+

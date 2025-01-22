@@ -1,0 +1,15 @@
+/.
+/usr
+/usr/bin
+/usr/bin/ncal
+/usr/share
+/usr/share/doc
+/usr/share/doc/ncal
+/usr/share/doc/ncal/NEWS.Debian.gz
+/usr/share/doc/ncal/changelog.gz
+/usr/share/doc/ncal/copyright
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/ncal.1.gz
+/usr/bin/cal
+/usr/share/man/man1/cal.1.gz

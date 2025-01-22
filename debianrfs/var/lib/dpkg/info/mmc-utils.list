@@ -1,0 +1,12 @@
+/.
+/usr
+/usr/bin
+/usr/bin/mmc
+/usr/share
+/usr/share/doc
+/usr/share/doc/mmc-utils
+/usr/share/doc/mmc-utils/changelog.Debian.gz
+/usr/share/doc/mmc-utils/copyright
+/usr/share/man
+/usr/share/man/man1
+/usr/share/man/man1/mmc.1.gz

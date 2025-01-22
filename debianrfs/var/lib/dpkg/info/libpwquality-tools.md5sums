@@ -1,0 +1,8 @@
+53acb48215d042ab3881123453796ec1  usr/bin/pwmake
+c60d2f9a1d05e64ce8e5c1fbd69836d7  usr/bin/pwscore
+c70a1663819f8da2b2335bc2452099f8  usr/share/doc/libpwquality-tools/changelog.Debian.armhf.gz
+39a0225d702605d107b0f2ff8d0730b4  usr/share/doc/libpwquality-tools/changelog.Debian.gz
+edbb3625f5c9243a70b06102d3133dae  usr/share/doc/libpwquality-tools/changelog.gz
+8c87862face413887178d7f782e53d39  usr/share/doc/libpwquality-tools/copyright
+55ad042f13cbab9a295e4e18cf09f0df  usr/share/man/man1/pwmake.1.gz
+06ca50d135f4f3b737791cd01ad49ddb  usr/share/man/man1/pwscore.1.gz

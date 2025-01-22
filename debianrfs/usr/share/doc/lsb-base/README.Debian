@@ -1,0 +1,26 @@
+lsb for Debian
+--------------
+
+This package used to provide the Linux Standard Base on Debian systems.
+The LSB is a specification for allowing the same binary package to be used
+on multiple distributions.
+
+Since version 9.20150826, this package stopped providing the compatibility
+LSB packages and only provided lsb-base and lsb-release.
+
+By late 2022 (before Bookworm), lsb-base has been subsumed into
+sysvinit-utils while lsb-release has its remaining functionality
+reimplemented without the old complexity.
+
+The lsb-base package is gone save for this empty stub, needed only
+because of installer quirks.  It can be purged from your system.
+
+
+lsb-base dependency
+-------------------
+
+In the past, packages including an init script were required to Depend
+on lsb-base.  This is not needed anymore as the included files have been
+a part of the Essential set for a while.  Thus, you can clean it away
+-- but despite lintian being a bit dramatic, there is no rush in doing
+so as Provides: make that dependency harmless.

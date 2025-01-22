@@ -1,0 +1,15 @@
+/.
+/lib
+/lib/udev
+/lib/udev/rules.d
+/lib/udev/rules.d/90-libiio0.rules
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libiio.so.0.24
+/usr/share
+/usr/share/doc
+/usr/share/doc/libiio0
+/usr/share/doc/libiio0/changelog.Debian.gz
+/usr/share/doc/libiio0/copyright
+/usr/lib/arm-linux-gnueabihf/libiio.so.0

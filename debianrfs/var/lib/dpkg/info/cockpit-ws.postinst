@@ -1,0 +1,76 @@
+#!/bin/sh
+set -e
+
+adduser --system --group --home /nonexistent --no-create-home --quiet cockpit-ws
+adduser --system --group --home /nonexistent --no-create-home --quiet cockpit-wsinstance
+
+# change group of cockpit-session on upgrades (changed in version 203)
+if OUT=$(dpkg-statoverride --list /usr/lib/cockpit/cockpit-session) && [ "$OUT#root cockpit-ws 4750}" != "$OUT" ]; then
+    echo "Adjusting /usr/lib/cockpit/cockpit-session permissions..."
+    dpkg-statoverride --remove /usr/lib/cockpit/cockpit-session
+fi
+
+if ! dpkg-statoverride --list /usr/lib/cockpit/cockpit-session >/dev/null; then
+    dpkg-statoverride --update --add root cockpit-wsinstance 4750 /usr/lib/cockpit/cockpit-session
+fi
+
+# Automatically added by dh_installtmpfiles/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -x "$(command -v systemd-tmpfiles)" ]; then
+		systemd-tmpfiles ${DPKG_ROOT:+--root="$DPKG_ROOT"} --create cockpit-tempfiles.conf >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	# The following line should be removed in trixie or trixie+1
+	deb-systemd-helper unmask 'cockpit.socket' >/dev/null || true
+
+	# was-enabled defaults to true, so new installations run enable.
+	if deb-systemd-helper --quiet was-enabled 'cockpit.socket'; then
+		# Enables the unit on first installation, creates new
+		# symlinks on upgrades if the unit file has changed.
+		deb-systemd-helper enable 'cockpit.socket' >/dev/null || true
+	else
+		# Update the statefile to add new symlinks (if any), which need to be
+		# cleaned up on purge. Also remove old symlinks.
+		deb-systemd-helper update-state 'cockpit.socket' >/dev/null || true
+	fi
+fi
+# End automatically added section
+# Automatically added by dh_installsystemd/13.11.4
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+	if [ -d /run/systemd/system ]; then
+		systemctl --system daemon-reload >/dev/null || true
+		if [ -n "$2" ]; then
+			_dh_action=restart
+		else
+			_dh_action=start
+		fi
+		deb-systemd-invoke $_dh_action 'cockpit.socket' >/dev/null || true
+	fi
+fi
+# End automatically added section
+
+
+# restart cockpit.service on package upgrades, if it's already running
+if [ -d /run/systemd/system ] && [ -n "$2" ]; then
+    deb-systemd-invoke try-restart cockpit.service >/dev/null || true
+fi
+
+# set up dynamic motd/issue symlinks on first-time install or upgrades from < 244 (which moved them out of the .deb)
+if [ "$1" = "configure" ] && dpkg --compare-versions "$2" lt 244; then
+    mkdir -p /etc/motd.d /etc/issue.d
+    ln -s ../../run/cockpit/motd /etc/motd.d/cockpit
+    ln -s ../../run/cockpit/motd /etc/issue.d/cockpit.issue
+    printf "# List of users which are not allowed to login to Cockpit\nroot\n" > /etc/cockpit/disallowed-users
+    chmod 644 /etc/cockpit/disallowed-users
+fi
+
+# check for deprecated PAM config
+if grep --color=auto pam_cockpit_cert /etc/pam.d/cockpit; then
+    echo '**** WARNING:'
+    echo '**** WARNING: pam_cockpit_cert is a no-op and will be removed in a'
+    echo '**** WARNING: future release; remove it from your /etc/pam.d/cockpit.'
+    echo '**** WARNING:'
+fi

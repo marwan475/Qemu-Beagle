@@ -1,0 +1,14 @@
+/.
+/usr
+/usr/lib
+/usr/lib/arm-linux-gnueabihf
+/usr/lib/arm-linux-gnueabihf/libgpiod.so.2.2.2
+/usr/lib/arm-linux-gnueabihf/libgpiodcxx.so.1.1.2
+/usr/share
+/usr/share/doc
+/usr/share/doc/libgpiod2
+/usr/share/doc/libgpiod2/changelog.Debian.armhf.gz
+/usr/share/doc/libgpiod2/changelog.Debian.gz
+/usr/share/doc/libgpiod2/copyright
+/usr/lib/arm-linux-gnueabihf/libgpiod.so.2
+/usr/lib/arm-linux-gnueabihf/libgpiodcxx.so.1

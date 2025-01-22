@@ -1,0 +1,79 @@
+Template: nginx/log-symlinks
+Type: note
+Description: Possible insecure nginx log files
+ The following log files under /var/log/nginx directory are symlinks
+ owned by www-data:
+ .
+ ${logfiles}
+ .
+ Since nginx 1.4.4-4 /var/log/nginx was owned by www-data. As a result
+ www-data could symlink log files to sensitive locations, which in turn
+ could lead to privilege escalation attacks. Although /var/log/nginx
+ permissions are now fixed it is possible that such insecure links
+ already exist. So, please make sure to check the above locations.
+Description-ca.UTF-8: És possible que els fitxers de registre nginx siguin insegurs
+ Els següents fitxers de registre, sota el directori /var/log/nginx, són enllaços simbòlics propietat de www-data:
+ .
+ ${logfiles}
+ .
+ Des de la versió 1.4.4-4 de nginx, /var/log/nginx ha estat propietat de www-data. A causa d'això, www-data podria tenir enllaços simbòlics d'arxius de registre a ubicacions sensibles que, al seu torn, podrien donar lloc a atacs d'escalada de privilegis. Encara que els permisos de /var/log/nginx estan arreglats és possible que encara existeixin alguns enllaços simbòlics insegurs. Per tant, assegura't de comprovar les ubicacions esmentades.
+Description-da.UTF-8: Nginx-logfilerne er muligvis usikre
+ De følgende logfiler under mappen /var/log/nginx er symbolske henvisninger ejet af www-data:
+ .
+ ${logfiles}
+ .
+ Siden nginx 1.4.4-4 var /var/log/nginx ejet af www-data. Www-data kunne derfor oprette logfiler med symbolske henvisninger til sensitive placeringer, som igen kunne føre til privilegerede optrapningsangreb. Selvom /var/log/nginx-rettigheder nu er rettet, så er det muligt at sådanne usikre henvisninger stadig findes. Så, husk at kontrollere ovenstående placeringer.
+Description-de.UTF-8: Möglicherweise unsichere Nginx-Protokolldateien
+ Die folgenden Protokolldateien unterhalb des Verzeichnisses /var/log/nginx sind symbolische Verweise, die »www-data« gehören:
+ .
+ ${logfiles}
+ .
+ Seit Nginx 1.4.4-4 gehörte /var/log/nginx »www-data«. Dies führte unter anderem dazu, dass »www-data« auf Protokolldateien an vertraulichen Stellen symbolisch verweisen konnte, was im Folgenden zu Rechteerweiterungsangriffen führen konnte. Obwohl die Rechte an /var/log/nginx nun korrigiert sind, ist es möglich, dass derartige unsichere Verweise bereits existieren. Prüfen Sie daher bitte die oben genannten Orte.
+Description-es.UTF-8: Posibles archivos de registro inseguros de nginx
+ Los siguientes archivos de registro en el directorio /var/log/nginx son enlaces simbólicos propiedad de www-data:
+ .
+ ${logfiles}
+ .
+ Dado nginx 1.4.4-4 /var/log/nginx era propiedad de www-data. Como resultado, www-data podría enlazar archivos de registro a ubicaciones sensibles, lo que a su vez podría dar lugar a ataques de escalamiento de privilegios. Aunque los permisos de /var/log/nginx están ahora arreglados, es posible que dichos enlaces inseguros ya existan. Por lo tanto, asegúrese de comprobar las ubicaciones anteriores.
+Description-fr.UTF-8: Certains fichiers de journaux semblent non sécurisés
+ Les fichiers de journaux suivants se trouvant dans le dossier /var/log/nginx sont des liens symboliques qui appartiennent à www-data :
+ .
+ ${logfiles}
+ .
+ Depuis la version 1.4.4-4 de nginx, /var/log/nginx appartient à www-data. Par conséquent www-data peut faire des liens symboliques des fichiers de journaux vers des emplacements sensibles, ce qui pourrait amener à des attaques par augmentation de droits. Même si désormais les droits de /var/log/nginx ont été sécurisés, il est possible que de tels liens existent déjà. Aussi, veuillez vous assurer d'avoir contrôlé les emplacements ci-dessus.
+Description-it.UTF-8: Documenti di log di nginx potenzialmente non sicuri
+ I seguenti documenti di log nel percorso /var/log/nginx sono collegamenti simbolici (symlink) posseduti da www-data:
+ .
+ ${logfiles}
+ .
+ Da nginx 1.4.4-4 /var/log/nginx era posseduto da www-data. Di conseguenza www-data poteva creare collegamenti simbolici (symlink) a documenti di log in percorsi sensibili, il che a sua volta poteva portare ad attacchi di usurpazione di privilegi. Sebbene i permessi di /var/log/nginx siano adesso corretti è possibile che questi link non sicuri esistano già. Quindi, controllare i percorsi indicati sopra.
+Description-nl.UTF-8: Wellicht onveilige nginx logbestanden
+ De volgende logbestanden in de map /var/log/nginx zijn symbolische koppelingen met www-data als eigenaar:
+ .
+ ${logfiles}
+ .
+ Sinds nginx 1.4.4-4 was www-data eigenaar van /var/log/nginx. Als gevolg daarvan kon www-data een symbolische koppeling maken tussen logbestanden en gevoelige plaatsen, hetgeen op zijn beurt kon leiden tot aanvallen van het type rechtenuitbreiding (privilege escalation). De toegangsrechten voor /var/log/nginx zijn nu gerepareerd, maar het is mogelijk dat er reeds dergelijke onveilige koppelingen bestaan. U moet dus zeker bovenstaande locaties controleren.
+Description-pt.UTF-8: Ficheiros de eventos (log) do nginx possivelmente inseguros
+ Os seguintes ficheiros de eventos da pasta /var/log/nginx são ligações simbólicas (symlinks) detidos por www-data:
+ .
+ ${logfiles}
+ .
+ Desde a versão 1.4.4-4 do nginx, o ficheiro /var/log/nginx é detido pelo www-data. Como resultado o www-data pode criar ligações simbólicas de ficheiros de eventos para locais sensíveis, o que poderá levar a uma escalada de ataques de privilégios. Apesar das permissões de /var/log/nginx estarem agora seguras, é possível que tais ligações inseguras já existam. Verifique por favor os locais acima mencionados.
+Description-pt_BR.UTF-8: Possíveis arquivos de log do nginx inseguros
+ Os seguintes arquivos de log sob o diretório /var/log/nginx são links simbólicos de propriedade de www-data:
+ .
+ ${logfiles}
+ .
+ Desde a versão 1.4.4-4 do nginx, /var/log/nginx é de propriedade de www-data. Como resultado, www-data pode criar links simbólicos dos arquivos de log em locais sensíveis, o que, por sua vez, pode levar a ataques de elevação de privilégio. Embora as permissões de /var/log/nginx estejam agora corrigidas, é possível que tais links inseguros ainda existam. Portanto, por favor, certifique-se de verificar os locais acima.
+Description-ru.UTF-8: Возможно небезопасные файлы журналов nginx
+ Следующие файлы журналов в каталоге /var/log/nginx представляют собой символьные ссылки, владельцем которых является www-data:
+ .
+ ${logfiles}
+ .
+ Начиная с версии 1.4.4-4 владельцем /var/log/nginx является www-data. В результате www-data может создавать символьные ссылки, указывающие на чувствительные файлы, что, в свою очередь, может приводить к повышению привилегий. Хотя права доступа к /var/log/nginx в настоящее время исправлены, вполне вероятно, что такие небезопасные ссылки уже существуют. Поэтому обязательно проверьте приведённый выше каталог.
+Description-tr.UTF-8: Güvenliği sağlanmamış nginx günlük dosyaları olabilir
+ /var/log/nginx dizini altında bulunan aşağıdaki günlük dosyaları sahibi www-data olan sembolik bağlantılardır:
+ .
+ ${logfiles}
+ .
+ nginx'in 1.4.4-4 ve sonraki sürümlerinde /var/log/nginx dizininin sahibi www-data idi. Bu nedenle www-data hassas konumlardaki sistem günlüklerine erişen sembolik bağlantılara sahip olabiliyor ve bu durum ayrıcalık kazanma yolu ile yapılabilecek saldırılara olanak sağlayabiliyordu. Artık /var/log/nginx dizininin erişim hakları düzeltilmiş olsa da güvenliği sağlanmamış bağlantılar kalmış olabilir. Lütfen yukarıdaki konumları gözden geçiriniz.

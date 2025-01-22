@@ -1,0 +1,7 @@
+2023-10-07 19:14:08.339 [info] Getting Manifest... formulahendry.code-runner
+2023-10-07 19:14:09.003 [info] Installing extension: formulahendry.code-runner
+2023-10-07 19:14:12.244 [info] Extension signature verification is not done: formulahendry.code-runner
+2023-10-07 19:14:12.879 [info] Extracted extension to /opt/bb-code-server/extensions/.942347b9-4ebd-4a36-b08e-8f6fe7f3a5f2: formulahendry.code-runner
+2023-10-07 19:14:12.888 [info] Renamed to /opt/bb-code-server/extensions/formulahendry.code-runner-0.12.0-universal
+2023-10-07 19:14:12.893 [info] Extracting extension completed. formulahendry.code-runner
+2023-10-07 19:14:12.905 [info] Extension installed successfully: formulahendry.code-runner

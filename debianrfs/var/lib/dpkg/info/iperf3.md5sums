@@ -1,0 +1,7 @@
+514ce9a326bfe1ac7942d7d132bd1d4b  lib/systemd/system/iperf3.service
+c757e0def14835075b4f8c510b990f10  usr/bin/iperf3
+96d60341803190a0e46baa31fd4615c5  usr/share/doc/iperf3/README.md.gz
+3104a5bdccf05ba1ae85e17c0eaaaad5  usr/share/doc/iperf3/changelog.Debian.gz
+77ec1784b449860255e7750012c53b22  usr/share/doc/iperf3/changelog.gz
+b72014fd491796a6fb6db33b1b2362ce  usr/share/doc/iperf3/copyright
+3e2c457e2c28a1c5fa0afd0f718a7b4c  usr/share/man/man1/iperf3.1.gz

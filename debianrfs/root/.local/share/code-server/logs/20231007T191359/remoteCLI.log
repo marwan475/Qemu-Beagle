@@ -1,0 +1,7 @@
+2023-10-07 19:14:00.609 [info] Getting Manifest... donjayamanne.githistory
+2023-10-07 19:14:01.381 [info] Installing extension: donjayamanne.githistory
+2023-10-07 19:14:04.625 [info] Extension signature verification is not done: donjayamanne.githistory
+2023-10-07 19:14:04.930 [info] Extracted extension to /opt/bb-code-server/extensions/.61ccd217-e432-4371-aae5-517a4f9dbb73: donjayamanne.githistory
+2023-10-07 19:14:04.939 [info] Renamed to /opt/bb-code-server/extensions/donjayamanne.githistory-0.6.20-universal
+2023-10-07 19:14:04.944 [info] Extracting extension completed. donjayamanne.githistory
+2023-10-07 19:14:04.954 [info] Extension installed successfully: donjayamanne.githistory

@@ -1,0 +1,18 @@
+#!/bin/sh
+set -e
+
+
+
+if [ "$1" != configure ]; then
+	exit 0
+fi
+
+if [ -d /var/cache/apt/apt-file ]; then
+	echo "Discarding old apt-file cache, please run \"apt update\""
+	rm -fr /var/cache/apt/apt-file/
+fi
+
+if /usr/share/apt-file/is-cache-empty; then
+	echo "The system-wide cache is empty. You may want to run 'apt-file update'"
+	echo "as root to update the cache."
+fi

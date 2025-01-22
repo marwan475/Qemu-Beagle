@@ -1,0 +1,14 @@
+/.
+/opt
+/opt/u-boot
+/opt/u-boot/bb-u-boot-am57xx-evm
+/opt/u-boot/bb-u-boot-am57xx-evm/MLO
+/opt/u-boot/bb-u-boot-am57xx-evm/install-mmcblk0.sh
+/opt/u-boot/bb-u-boot-am57xx-evm/install-mmcblk1.sh
+/opt/u-boot/bb-u-boot-am57xx-evm/install.sh
+/opt/u-boot/bb-u-boot-am57xx-evm/u-boot-dtb.img
+/usr
+/usr/share
+/usr/share/doc
+/usr/share/doc/bb-u-boot-am57xx-evm
+/usr/share/doc/bb-u-boot-am57xx-evm/changelog.Debian.gz

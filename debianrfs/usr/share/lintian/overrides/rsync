@@ -1,0 +1,4 @@
+rsync: init.d-script-does-not-provide-itself [etc/init.d/rsync]
+rsync: spelling-error-in-binary Licence License [usr/bin/rsync]
+rsync: spelling-error-in-binary dont don't [usr/bin/rsync]
+rsync: typo-in-manual-page "allow to" "allow one to" [usr/share/man/man1/rsync.1.gz:1760]

@@ -1,0 +1,13 @@
+03af36ecfd2506736ee7a1f6b65cacb3  lib/firmware/am335x-pru0-fw.sleep
+14694e70fd5fab68f0b3e42697124a30  lib/firmware/am335x-pru1-fw.sleep
+938df66d721ac9c1eb06e2d5d9dda84f  lib/firmware/am57xx-pru1_0-fw.sleep
+8c4542cf70601812012692b47fa84b08  lib/firmware/am57xx-pru1_1-fw.sleep
+9366bb8bc438c9a2bf39f2c711214d26  lib/firmware/am57xx-pru2_0-fw.sleep
+9a3edf89b4121125c2243dce25944729  lib/firmware/am57xx-pru2_1-fw.sleep
+890def8154bbca75160ac8ad133f04af  lib/systemd/system/bb-symlinks.service
+e30e01f331cfaf086bfd1756147754d6  usr/sbin/bb-symlinks
+b32efa21942a6c45a9fc67975be22356  usr/share/backgrounds/bbb.io/beaglebg.jpg
+3c9818d65b87f6bad47bec2c28ae3f15  usr/share/backgrounds/bbb.io/beagleboard-logo.svg
+ee4f41a8d520579963dba33d698836d4  usr/share/doc/bb-customizations/changelog.Debian.gz
+61a7c7c298652e07e0c0260ef8707942  usr/share/doc/bb-customizations/copyright
+9c895d0d20f4121e43237963de01a8dd  usr/share/initramfs-tools/hooks/ti_pru_firmware

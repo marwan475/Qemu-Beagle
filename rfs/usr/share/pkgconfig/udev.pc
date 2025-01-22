@@ -1,5 +1,0 @@
-Name: udev
-Description: udev
-Version: 167
-
-udevdir=/lib/udev

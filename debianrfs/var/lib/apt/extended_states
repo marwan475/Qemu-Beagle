@@ -1,0 +1,256 @@
+Package: dbus-user-session
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libavahi-core7
+Architecture: armhf
+Auto-Installed: 1
+
+Package: dbus-daemon
+Architecture: armhf
+Auto-Installed: 1
+
+Package: avahi-daemon
+Architecture: armhf
+Auto-Installed: 1
+
+Package: dbus-bin
+Architecture: armhf
+Auto-Installed: 1
+
+Package: dbus-session-bus-common
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libdaemon0
+Architecture: armhf
+Auto-Installed: 1
+
+Package: bluez
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libdw1
+Architecture: armhf
+Auto-Installed: 1
+
+Package: dbus-system-bus-common
+Architecture: armhf
+Auto-Installed: 1
+
+Package: dbus
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libpolkit-agent-1-0
+Architecture: armhf
+Auto-Installed: 1
+
+Package: qcacld-2.0-modules-5.10.168-ti-r72
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libssh-4
+Architecture: armhf
+Auto-Installed: 1
+
+Package: packagekit-tools
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libproxy1v5
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libglib2.0-bin
+Architecture: armhf
+Auto-Installed: 1
+
+Package: polkitd
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libunwind8
+Architecture: armhf
+Auto-Installed: 1
+
+Package: sgml-base
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libpwquality-common
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libxmlb2
+Architecture: armhf
+Auto-Installed: 1
+
+Package: bbb.io-kernel-tasks
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libcrack2
+Architecture: armhf
+Auto-Installed: 1
+
+Package: xxd
+Architecture: armhf
+Auto-Installed: 1
+
+Package: cockpit-bridge
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libpruio-modules-5.10.168-ti-r72
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libglib2.0-data
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libdconf1
+Architecture: armhf
+Auto-Installed: 1
+
+Package: psmisc
+Architecture: armhf
+Auto-Installed: 1
+
+Package: wamerican
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libstemmer0d
+Architecture: armhf
+Auto-Installed: 1
+
+Package: shared-mime-info
+Architecture: armhf
+Auto-Installed: 1
+
+Package: glib-networking-common
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libappstream4
+Architecture: armhf
+Auto-Installed: 1
+
+Package: appstream
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libpwquality-tools
+Architecture: armhf
+Auto-Installed: 1
+
+Package: packagekit
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libjson-glib-1.0-common
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libpwquality1
+Architecture: armhf
+Auto-Installed: 1
+
+Package: glib-networking-services
+Architecture: armhf
+Auto-Installed: 1
+
+Package: rtl8821cu-modules-5.10.168-ti-r72
+Architecture: armhf
+Auto-Installed: 1
+
+Package: rtl8723bu-modules-5.10.168-ti-r72
+Architecture: armhf
+Auto-Installed: 1
+
+Package: gsettings-desktop-schemas
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libconfig9
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libpolkit-gobject-1-0
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libpackagekit-glib2-18
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libgstreamer1.0-0
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libjson-glib-1.0-0
+Architecture: armhf
+Auto-Installed: 1
+
+Package: dconf-gsettings-backend
+Architecture: armhf
+Auto-Installed: 1
+
+Package: rtl8723du-modules-5.10.168-ti-r72
+Architecture: armhf
+Auto-Installed: 1
+
+Package: lua5.1
+Architecture: armhf
+Auto-Installed: 1
+
+Package: ti-sgx-ti335x-modules-5.10.168-ti-r72
+Architecture: armhf
+Auto-Installed: 1
+
+Package: dphys-swapfile
+Architecture: armhf
+Auto-Installed: 1
+
+Package: parted
+Architecture: armhf
+Auto-Installed: 1
+
+Package: dc
+Architecture: armhf
+Auto-Installed: 1
+
+Package: cracklib-runtime
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libduktape207
+Architecture: armhf
+Auto-Installed: 1
+
+Package: xml-core
+Architecture: armhf
+Auto-Installed: 1
+
+Package: dconf-service
+Architecture: armhf
+Auto-Installed: 1
+
+Package: glib-networking
+Architecture: armhf
+Auto-Installed: 1
+
+Package: libparted2
+Architecture: armhf
+Auto-Installed: 1
+
+Package: linux-image-5.10.168-ti-r72
+Architecture: armhf
+Auto-Installed: 1
+
+Package: mmc-utils
+Architecture: armhf
+Auto-Installed: 1
+
