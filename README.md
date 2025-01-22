@@ -157,7 +157,26 @@ umount /mnt/beagle
 
 ```
 
-do the same for the root file system, ive also added in a working rfs for time saving
+# Getting the Root file system
+
+we are gonna steal it from the offical image
+
+```sh
+wget https://beagleboard.org/latest-images/am335x-debian-12.2-iot-armhf-2023-10-07-4gb.img.xz
+unxz am335x-debian-12.2-iot-armhf-2023-10-07-4gb.img
+
+sudo losetup --partscan /dev/loop1/am335x-debian-12.2-iot-armhf-2023-10-07-4gb.img
+sudo mount /dev/loop1p1 /mnt/beagle
+
+mkdir rfs
+sudo cp /mnt/beagle/* rfs -r
+
+sudo umount /mnt/beagle
+
+losetup -d /dev/loop1
+ 
+```
+no copy rfs to second partition of img
 
 ```sh
 sudo mount /dev/loop0p2 /mnt/beagle/
@@ -174,13 +193,18 @@ the last step is to build the linux kernel
 
 ## Building the linux kernel
 
-you can clone from the offical linux repo or from https://github.com/beagleboard/linux
+you can clone from https://github.com/beagleboard/linux
 
 make sure you have arm cross compilers installed
 
 clone into linux and enter the repo
 
+the beagle bone black uses version 5.10.168-ti-r63
+*note this version dosent compile so i switched to 5.10.168-ti-r77
+
 ```sh
+git checkout 5.10.168-ti-r77
+
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- distclean
 
 # compile for beagle board, required to work on qemu
@@ -188,19 +212,6 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- omap2plus_defconfig -j$(nproc)
 
 make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- uImage dtbs LOADADDR=0x80008000 -j$(nproc)
 
-```
-after compiling make sure to remove thermal driver support, as they cause the kernel to error in qemu
-
-```sh
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- menuconfig
-```
-Device Drivers > Thermal drivers > Texas Instruments thermal drivers
-
-disable Texas Instruments SoCs temperature sensor driver  
-
-recompile
-```sh
-make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- uImage dtbs LOADADDR=0x80008000 -j$(nproc)
 ```
 
 ## loading uImage onto bootpartition
