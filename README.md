@@ -176,7 +176,7 @@ sudo umount /mnt/beagle
 losetup -d /dev/loop1
  
 ```
-no copy rfs to second partition of img
+now copy rfs to second partition of img
 
 ```sh
 sudo mount /dev/loop0p2 /mnt/beagle/
