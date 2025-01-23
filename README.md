@@ -163,9 +163,9 @@ we are gonna steal it from the offical image
 
 ```sh
 wget https://beagleboard.org/latest-images/am335x-debian-12.2-iot-armhf-2023-10-07-4gb.img.xz
-unxz am335x-debian-12.2-iot-armhf-2023-10-07-4gb.img
+unxz am335x-debian-12.2-iot-armhf-2023-10-07-4gb.img.xz
 
-sudo losetup --partscan /dev/loop1/am335x-debian-12.2-iot-armhf-2023-10-07-4gb.img
+sudo losetup --partscan /dev/loop1 am335x-debian-12.2-iot-armhf-2023-10-07-4gb.img
 sudo mount /dev/loop1p1 /mnt/beagle
 
 mkdir rfs
@@ -271,8 +271,61 @@ we are now in a root shell on an emulated beagle
 
 we can now develop for embedded linux using qemu since we compiled our own kernel
 
-to get your kernel changes to work on the actual beagle bone black you will have to use different preset config and .dtb, likely diffrent versions of MLO and u-boot
+# Getting the kernel on the real board
 
-i will update this once i get to working with the actual board
+#### Updating the img file
+
+```sh
+# make a copy of the beaglebone.img with a new name
+cp beaglebone.img beagle.img
+
+sudo losetup --partscan /dev/loop2 beagle.img
+
+sudo mount /dev/loop2p1 /mnt/beagle
+
+# remove board.dtb and MLO and u-boot.img
+# move the new MLO and u-boot.img from bootpartitionHW into /mnt/beagle
+
+# move linux/arch/arm/boot/dts/am335x-boneblack.dtb into /mnt/beagle/ and rename it to board.dtb
+
+# now unmount
+
+sudo umount /mnt/beagle
+```
+
+## Flashing the img to the microsd
+
+Install Balena Etcher from https://etcher.balena.io/
+
+use this to flash the img to the microsd using this
+
+ok now we have or microsd card setup time to boot
+
+## Setup UART serial output
+
+![Screenshot from 2020-08-25 22-18-12](https://user-images.githubusercontent.com/32474027/91179255-3c4f7a00-e721-11ea-8006-a49083c3fb5e.png)
+
+connect UART using that usb thing
+
+## Accessing serial output
+
+this wont work with wsl so get a linux virutal machine using virtual box
+
+connect the USB to the virtual machine
+
+it should be under /dev/ttyUSB0
+
+```sh
+tio /dev/ttyUSB0
+```
+
+## Powering on the machine
+
+when powered off
+- insert microsd
+- hold BOOT button
+- now hold the power button
+- you should see output in the tio terminal
+
 
 
