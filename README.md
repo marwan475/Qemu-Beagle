@@ -17,7 +17,7 @@ the closest we can get is using a fork of qemu by linaro that has support for th
 - the main diffrence is the memory map of the CPUs
   - begale bone black uses am335x
   - beagle board uses omap3
-  - we will have to change the config slightly when compiling the linux kernel for qemu vs actual board
+  - we will have to change the device tree blob when flashing the linux kernel for qemu vs actual board
  
 with this knowledge we know we wont be able to emulate the BBB perfectly but we can get close, as qemu is a great tool for development
 
