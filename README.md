@@ -252,6 +252,10 @@ saveenv
 
 boot
 ```
+login into root not debian because for some reason you cant switch to root when your logged in as debian
+
+username: root
+password: root
 
 we are now in a root shell on an emulated beagle 
 
