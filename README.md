@@ -253,7 +253,6 @@ saveenv
 boot
 ```
 
-
 we are now in a root shell on an emulated beagle 
 
 we can now develop for embedded linux using qemu since we compiled our own kernel
@@ -270,8 +269,7 @@ sudo losetup --partscan /dev/loop2 beagle.img
 
 sudo mount /dev/loop2p1 /mnt/beagle
 
-# remove board.dtb and MLO and u-boot.img
-# move the new MLO and u-boot.img from bootpartitionHW into /mnt/beagle
+# remove board.dtb a
 
 # move linux/arch/arm/boot/dts/am335x-boneblack.dtb into /mnt/beagle/ and rename it to board.dtb
 
