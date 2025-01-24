@@ -236,36 +236,23 @@ umount /mnt/beagle
 
 ## booting up
 
-one issue we will face is the init script will fail to mount our rfs so we have to do it manually
 
 Boot up qemu
 ```sh
 ./qemu-system-arm -M beagle -cpu cortex-a8 -m 512M -sd ./beaglebone.img -clock unix -serial stdio -usb -device usb-kbd -k /usr/share/qemu/keymaps/en-us
 ```
 
-wait for u-boot to auto boot, and dont press anything
+Cancel u-boot auto boot
 
-after a bit, (if it stalls after it gets to mounting on /root just wait) we will drop into an initramfs
-
-from here we will continue and mount the root file system manually
-
+run these commands
 ```sh
-# mount file system
-(initramfs) mount -t ext4 /dev/mmcblk0p2 /root
-(initramfs) cp /bin/busybox /root/bin/
+setenv mmcrootfstype ext4
 
-# not sure if this is mandatory but the script attempts to do this
-(initramfs) mount --bind /dev /root/dev 
-(initramfs) mount -t proc proc /root/proc 
-(initramfs) mount -t sysfs sysfs /root/sys
+saveenv
 
-# change root file system, it will show an erorr message about tty this is normal
-(initramfs) chroot /root
-
-# start bash shell
-(initramfs) /bin/bash
-
+boot
 ```
+
 
 we are now in a root shell on an emulated beagle 
 
