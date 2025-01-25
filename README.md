@@ -273,9 +273,11 @@ sudo losetup --partscan /dev/loop2 beagle.img
 
 sudo mount /dev/loop2p1 /mnt/beagle
 
-# remove board.dtb a
+# remove board.dtb a MLO and u-boot.bin
 
 # move linux/arch/arm/boot/dts/am335x-boneblack.dtb into /mnt/beagle/ and rename it to board.dtb
+
+# move MLO and u-boot.bin from bootpartitionHW into /mnt/beagle
 
 # now unmount
 
